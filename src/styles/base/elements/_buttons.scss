@@ -1,0 +1,69 @@
+@import '../../variables/colors';
+@import '../../variables/structure';
+
+
+@mixin buttonProperties() {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  padding: 5px 15px;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @include buttonProperties();
+  background: $color__background-button-persianOrange;
+  color: $color__button-link;
+  border: 1px solid $color__border-button-persianOrange;
+
+  &:hover, &:focus {
+    background: $color__background-button-hover;
+    color: $color__button-link-hover;
+  }
+}
+
+.button_persian-orange {
+  @include buttonProperties();
+  border: 2px solid $color__border-button-persianOrange;
+  border-radius: 20px;
+  background: $color__background-button-persianOrange;
+  color: $color__button-link;
+  font-size: 20px;
+  font-weight: 700;
+
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 18px;
+  }
+
+  &:hover, &:focus {
+    background: $color__background-button-hover;
+    color: $color__button-link-hover;
+    transition: all 0.3s ease-out;
+  }
+}
+
+.button_black-coral {
+  @include buttonProperties();
+  border: 2px solid $color__border-button-blackCoral;
+  border-radius: 20px;
+  background: $color__background-button-blackCoral;
+  color: $color__button-link;
+  font-size: 20px;
+  font-weight: 700;
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 18px;
+  }
+
+  &:hover, &:focus {
+    background: $color__background-button-hover;
+    color: $color__button-link-hover;
+    transition: all 0.3s ease-out;
+  }
+}
+
+
