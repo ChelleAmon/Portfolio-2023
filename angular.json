@@ -50,7 +50,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "../styles.scss",
+              "../node_modules/bootstrap/dist/scss/bootstrap.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -120,10 +121,12 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
-              "src/styles/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           }
         }
       }
