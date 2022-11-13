@@ -1,1 +1,6 @@
-<p>navigation works!</p>
+<nav class="navigation-section">
+  <ng-container *ngFor="let navItem of navigationItems">
+    <a href="#" class="navigation-section-link">{{ navItem }}</a>
+  </ng-container>
+</nav>
+

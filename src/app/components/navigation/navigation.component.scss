@@ -1,0 +1,23 @@
+@import '../../../styles';
+
+.navigation-section {
+  background: $color__navigation-body;
+  padding: 25px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  gap: 1.5rem;
+
+  @media (max-width: $size__standard-mobile) {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  &-link {
+    display: flex;
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
