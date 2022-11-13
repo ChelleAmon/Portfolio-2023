@@ -7,7 +7,7 @@
   align-items: center;
   text-align: center;
   font-style: normal;
-  padding: 5px 15px;
+  padding: 10px 20px;
 }
 
 button,
@@ -32,7 +32,8 @@ input[type="submit"] {
   background: $color__background-button-persianOrange;
   color: $color__button-link;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
 
 
   @media (max-width: $size__standard-mobile) {
@@ -53,7 +54,8 @@ input[type="submit"] {
   background: $color__background-button-blackCoral;
   color: $color__button-link;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
 
   @media (max-width: $size__standard-mobile) {
     font-size: 18px;
