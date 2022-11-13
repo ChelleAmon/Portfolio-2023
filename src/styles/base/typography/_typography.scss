@@ -1,0 +1,17 @@
+@import '../../variables/structure';
+@import '../../variables/colors';
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-input;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1rem;
+	line-height: 100%;
+}
+
+@import './copy';
+@import './headings';

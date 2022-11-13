@@ -1,0 +1,28 @@
+@import '../../variables/structure';
+@import '../../variables/colors';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 110%;
+	font-family: 'Open Sans';
+}
+
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  color: $color__text-main;
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 32px;
+  }
+}
+
