@@ -10,19 +10,11 @@
 #header-section-desktop {
   max-width: 1200px;
   width: 100%;
-  height: 500px;
-  background-color: blue;
-  margin: auto;
+  margin: 30px auto;
   padding: 0 30px;
   display: grid;
   grid-template-columns: 1.10fr 1fr;
-  grid-template-rows: max-content auto auto auto;
-  gap: 10px;
-
-  &  > div {
-    background: orange;
-    width: 100%;
-  }
+  grid-template-rows: auto 60px 60px 120px;
 
   .header-section-memoji {
     grid-row-end: span 4;
