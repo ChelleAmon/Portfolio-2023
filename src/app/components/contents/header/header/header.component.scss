@@ -73,6 +73,7 @@
   .contact-links-section {
     @include displayLayout(flex-start, center);
     flex-direction: row;
+    gap: 1rem;
     padding-left: 50px;
 
     .get-in-touch-section {
@@ -88,6 +89,15 @@
           color: #FFFFFF;
         }
       }
+    }
+    .social-media-icons-section {
+      @include displayLayout(center, center);
+      flex-direction: row;
+
+        .linkedin-icon, .github-icon{
+          width: 100%;
+
+        }
     }
   }
 }
