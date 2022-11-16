@@ -1,6 +1,6 @@
 @import '../../../../../styles';
 
-@mixin headingsDisplayLayout($justify-content, $align-item){
+@mixin displayLayout($justify-content, $align-item){
   display: flex;
   justify-content: $justify-content;
   align-items: $align-item;
@@ -25,7 +25,7 @@
   }
 
   .header-section-memoji {
-    grid-row-end: span 5;
+    grid-row-end: span 4;
     width: 100%;
     height: 100%;
 
@@ -37,7 +37,7 @@
   }
 
   .first-phrase-section {
-    @include headingsDisplayLayout(flex-start, flex-end);
+    @include displayLayout(flex-start, flex-end);
 
     p {
       margin-left: 20px;
@@ -46,7 +46,7 @@
   }
 
   .name-title-section {
-    @include headingsDisplayLayout(flex-start, center);
+    @include displayLayout(flex-start, center);
 
 
     h1 {
@@ -58,7 +58,7 @@
   }
 
   .job-title-section {
-    @include headingsDisplayLayout(flex-start, center);
+    @include displayLayout(flex-start, center);
 
 
     h2 {
@@ -67,6 +67,22 @@
       line-height: 46px;
       color: $color__text-main-second;
       text-shadow: 0px 6px 4px rgba(193, 140, 93, 0.25);
+    }
+  }
+
+  .contact-links-section {
+    @include displayLayout(flex-start, center);
+    flex-direction: row;
+    padding-left: 50px;
+
+    .get-in-touch-section {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 30px;
+
+      a {
+        font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+      }
     }
   }
 }
