@@ -81,7 +81,12 @@
       line-height: 30px;
 
       a {
+        color: #495867;
         font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+
+        &:hover, &:focus {
+          color: #FFFFFF;
+        }
       }
     }
   }
