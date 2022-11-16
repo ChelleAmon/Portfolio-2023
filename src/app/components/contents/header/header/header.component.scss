@@ -1,5 +1,12 @@
 @import '../../../../../styles';
 
+@mixin headingsDisplayLayout($justify-content, $align-item){
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-item;
+}
+
+
 #header-section-desktop {
   max-width: 1200px;
   width: 100%;
@@ -30,9 +37,7 @@
   }
 
   .first-phrase-section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    @include headingsDisplayLayout(flex-start, flex-end);
 
     p {
       margin-left: 20px;
@@ -41,15 +46,27 @@
   }
 
   .name-title-section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    @include headingsDisplayLayout(flex-start, center);
+
 
     h1 {
       margin-left: 20px;
       padding-left: 30px;
       line-height: 64px;
       text-shadow: 0px 4px 4px rgba(73, 88, 103, 0.25);
+    }
+  }
+
+  .job-title-section {
+    @include headingsDisplayLayout(flex-start, center);
+
+
+    h2 {
+      margin-left: 20px;
+      padding-left: 30px;
+      line-height: 46px;
+      color: $color__text-main-second;
+      text-shadow: 0px 6px 4px rgba(193, 140, 93, 0.25);
     }
   }
 }
