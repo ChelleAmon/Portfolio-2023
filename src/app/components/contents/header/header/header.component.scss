@@ -6,8 +6,9 @@
   align-items: $align-item;
 }
 
+// Desktop and wide screen
 
-#header-section-desktop {
+#header-section {
   max-width: 1200px;
   width: 100%;
   margin: 30px auto;
@@ -21,11 +22,12 @@
     width: 100%;
     height: 100%;
 
-  }
-  .memoji-block {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    .memoji-block {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
   }
 
   .first-phrase-section {
@@ -40,7 +42,6 @@
   .name-title-section {
     @include displayLayout(flex-start, center);
 
-
     h1 {
       margin-left: 20px;
       padding-left: 30px;
@@ -51,7 +52,6 @@
 
   .job-title-section {
     @include displayLayout(flex-start, center);
-
 
     h2 {
       margin-left: 20px;
@@ -93,3 +93,67 @@
     }
   }
 }
+
+
+// Mobile Screens : 991.98px and below
+
+
+#header-section {
+  @media (max-width: $size__standard-mobile){
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+
+
+    .header-section-memoji {
+      width: 220px;
+      height: 250px;
+      order: 1;
+    }
+
+    .first-phrase-section {
+      order: 2;
+      p {
+       padding: 0;
+      }
+    }
+
+    .name-title-section {
+      justify-self: start;
+      order: 3;
+      h1 {
+        padding-left: 0;
+      }
+    }
+
+  .job-title-section {
+    order: 4;
+
+    h2 {
+      padding-left: 0;
+      line-height: 100%;
+    }
+  }
+  .contact-links-section {
+    padding-left: 20px;
+    margin-top: 25px;
+    justify-content: center;
+    order: 5;
+
+    .get-in-touch-section {
+      font-size: 16px;
+      line-height: 100%;
+    }
+
+    .social-media-icons-section {
+      flex-direction: row;
+      width: 75%;
+        // .linkedin-icon, .github-icon{
+
+        // }
+    }
+  }
+  }
+}
+
