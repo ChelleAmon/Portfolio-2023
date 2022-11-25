@@ -1,0 +1,65 @@
+@import '../../../../../styles';
+
+// Desktop responsiveness
+
+#about-me-page {
+  max-width: 1200px;
+  margin: 100px 5rem;
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  border: 3px solid $color__border-about-section;
+  border-radius: 100px 0px;
+
+
+  .about-me-title {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+
+  .id-section {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+  }
+
+  .first-body-section, .second-body-section {
+    margin: 20px 100px;
+  }
+
+  .second-body-section  ul {
+    li {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150%;
+      color: $color__text-main;
+      font-family: 'Source Sans Pro', sans-serif;
+
+      @media (max-width: $size__standard-mobile) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .view-resume-section {
+    margin: 10px auto 40px;
+
+    button {
+      max-width: 450px;
+      margin: auto;
+      padding: 15px 60px;
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 110%;
+      color: $color__button-link;
+
+      &:hover, &:focus {
+        color: $color__button-link-hover;
+      }
+    }
+  }
+}
