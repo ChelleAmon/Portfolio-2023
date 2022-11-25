@@ -36,4 +36,15 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: $color__text-main;
+  font-family: 'Playfair Display', serif;
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 22px;
+  }
+}
+
 
