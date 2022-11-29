@@ -47,4 +47,16 @@ h3 {
   }
 }
 
+h5 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: $color__text-main;
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 20px;
+  }
+}
+
 
