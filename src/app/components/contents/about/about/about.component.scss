@@ -38,10 +38,6 @@
       line-height: 150%;
       color: $color__text-main;
       font-family: 'Source Sans Pro', sans-serif;
-
-      @media (max-width: $size__standard-mobile) {
-        font-size: 18px;
-      }
     }
   }
 
@@ -86,3 +82,47 @@
     }
   }
 
+// Mobile Responsiveness
+
+@media (max-width: $size__standard-mobile) {
+  #about-me-page {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0 18px;
+
+    .first-body-section, .second-body-section {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .second-body-section  ul {
+      margin-left: 1.5em;
+      li {
+        font-size: 18px;
+      }
+    }
+    .view-resume-section {
+      button {
+        font-size: 20px;
+
+      }
+    }
+    .images-section {
+      justify-content: center;
+      align-items: center;
+
+      .garfield-image-section {
+        margin-top: 30px;
+        padding-left: 17%;
+
+        img{
+          text-align: center;
+        }
+
+      }
+      .travel-image-section {
+        display:none;
+        }
+      }
+  }
+}
