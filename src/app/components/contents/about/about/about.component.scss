@@ -3,12 +3,13 @@
 // Desktop responsiveness
 
 #about-me-page {
-  max-width: 1200px;
-  margin: 100px 5rem;
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 30px;
   display: flex;
   justify-content: center;
-  flex-flow: column wrap;
-  -ms-flex-flow: column wrap;
+  flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
   border: 3px solid $color__border-about-section;
   border-radius: 100px 0px;
 
@@ -62,4 +63,26 @@
       }
     }
   }
-}
+  .images-section {
+    display: flex;
+    justify-content:space-between;
+
+    .garfield-image-section {
+      position: relative;
+      z-index: 2;
+      margin-top: -150px;
+      left: -50px;
+
+      img {
+      width: 220px;
+      }
+    }
+    .travel-image-section {
+      position: relative;
+      z-index: 2;
+      margin-top: -212px;
+      right: -100px;
+      }
+    }
+  }
+
