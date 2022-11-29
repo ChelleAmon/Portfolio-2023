@@ -5,11 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px auto 50px;
+  margin: 50px auto;
 }
 #skills-section-page {
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto 60px;
   padding: 0 50px;
   display: flex;
   justify-content: center;
@@ -25,6 +25,7 @@
     width: 100%;
     flex-basis: 60%;
   }
+
   .tech-skills-blocks-section {
     display: flex;
     justify-content: start;
@@ -46,7 +47,7 @@
 
     .backend-block, .learning-block {
       background: $color__background-skills_dark;
-     max-width: 500px;
+      max-width: 500px;
       padding: 20px 40px;
       display: flex;
       justify-content: center;
@@ -66,6 +67,36 @@
 
     .darker-skill-block {
       filter: drop-shadow(10px 10px 9px rgba(73, 88, 103, 0.25));
+    }
+  }
+}
+
+
+// Mobile Screens
+
+@media (max-width: $size__standard-mobile) {
+  .skills-title-section {
+    margin-bottom: 20px;
+  }
+
+  #skills-section-page {
+    padding: 0 30px;
+    flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    gap: 0.5rem;
+
+    .memoji-section{
+      justify-content: center;
+      img {
+        max-width: 80%;
+      }
+    }
+    .tech-skills-blocks-section {
+      gap: 1.25rem;
+
+      .frontend-block, .other-tools-block, .backend-block, .learning-block {
+        padding: 15px 25px;
+      }
     }
   }
 }
