@@ -28,33 +28,27 @@
 
   .tech-skills-blocks-section {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-shrink: 25%;
     flex-flow: column nowrap;
     gap: 2rem;
 
     .frontend-block, .other-tools-block {
-      background: $color__background-skills_light;
       max-width: 500px;
       padding: 20px 40px;
       display: flex;
       justify-content: center;
-      align-items: start;
+      align-items: flex-start;
       flex-direction: column;
-      border: 1px solid $color__border-skills-newyorkpink;
-      border-radius: 30px;
     }
 
     .backend-block, .learning-block {
-      background: $color__background-skills_dark;
       max-width: 500px;
       padding: 20px 40px;
       display: flex;
       justify-content: center;
-      align-items: start;
+      align-items: flex-start;
       flex-direction: column;
-      border: 1px solid $color__border-skills-blackcoral;
-      border-radius: 30px;
 
       h5, p {
         color: $color__text-main-third;
@@ -62,17 +56,23 @@
     }
 
     .lighter-skill-block {
+      background: $color__background-skills_light;
       filter: drop-shadow(10px 10px 9px rgba(206, 121, 107, 0.25));
+      border: 1px solid $color__border-skills-newyorkpink;
+      border-radius: 30px;
     }
 
     .darker-skill-block {
+      background: $color__background-skills_dark;
       filter: drop-shadow(10px 10px 9px rgba(73, 88, 103, 0.25));
+      border: 1px solid $color__border-skills-blackcoral;
+      border-radius: 30px;
     }
   }
 }
 
 
-// Mobile Screens
+// Mobile: Max screen size- 991.98px
 
 @media (max-width: $size__standard-mobile) {
   .skills-title-section {
