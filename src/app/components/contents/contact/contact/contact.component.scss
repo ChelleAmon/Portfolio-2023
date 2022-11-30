@@ -7,7 +7,7 @@
   flex-flow: column nowrap;
   -ms-flex-flow: column nowrap;
   max-width: 1200px;
-  margin: 70px auto;
+  margin: 70px auto 20px;
   padding: 0 70px;
 
   .contact-title-section {
@@ -69,3 +69,59 @@
     }
   }
 }
+.contact-image-section{
+  display: flex;
+  justify-content: center;
+}
+
+
+//Mobile Screens (max-width: 991.98px)
+
+@media (max-width: $size__standard-mobile) {
+  #contact-form-section-page {
+    padding: 0 30px;
+
+    .contact-title-section{
+      text-align: center;
+    }
+
+    .form-body-section{
+      .email-address-section{
+        flex-direction: column;
+        gap: 0.5rem;
+
+        label {
+          font-size: 20px;
+        }
+      }
+      .email-body-section{
+        gap: 0.5rem;
+
+        label {
+          font-size: 20px;
+          padding: 0;
+        }
+
+        textarea {
+          height: 300px;
+        }
+      }
+      .call-of-action-section{
+        flex-direction: column;
+        align-items: center;
+
+        .send-button-block .send-button, .reset-button-block .reset-button {
+          width: 200px;
+          max-width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .contact-image-section {
+    padding: 0 50px;
+  }
+}
+
+
