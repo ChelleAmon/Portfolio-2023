@@ -22,6 +22,7 @@ input[type="submit"] {
   &:hover, &:focus {
     background: $color__background-button-hover;
     color: $color__button-link-hover;
+    transition: all 0.3s ease-out;
   }
 }
 
