@@ -1,0 +1,71 @@
+@import '../../../../../styles';
+
+// Desktop and wide screen displays
+
+#contact-form-section-page {
+  display: flex;
+  flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  max-width: 1200px;
+  margin: 70px auto;
+  padding: 0 70px;
+
+  .contact-title-section {
+    display: flex;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+
+  .form-body-section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 1rem;
+
+    .email-address-section {
+      display: flex;
+      flex-direction: row;
+
+      label {
+        font-size: 28px;
+        color: $color__text-main;
+        font-family: 'Playfair Display', serif;
+        line-height: 110%;
+        padding-right: 15px;
+      }
+
+      input {
+        width: 1000px;
+        max-width: 100%;
+      }
+    }
+
+    .email-body-section {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 28px;
+        color: $color__text-main;
+        font-family: 'Playfair Display', serif;
+        padding: 10px 0 20px ;
+      }
+
+      textarea{
+        margin-bottom: 15px;
+        width: 1200px;
+        max-width: 100%;
+      }
+    }
+    .call-of-action-section{
+      display: flex;
+      flex-direction: row;
+      gap: 1.25rem;
+      justify-content: center;
+
+      .send-button-block .send-button, .reset-button-block .reset-button {
+        padding: 15px 60px;
+      }
+    }
+  }
+}
