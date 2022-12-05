@@ -1,6 +1,23 @@
-# Client
+# Portfolio 2023
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+## Description
+My online portfolio showcasing the technologies and skills I gained during my apprenticeship and some projects I have worked on. 
+
+## Technologies used on this project
+* Typescript
+* Angular (15 version) - updated 12/04/22
+* Sass
+* CSS
+* Netlify - to deploy the staging environment
+* *I might use a different hosting app to deploy the production environment*
+* Figma: https://www.figma.com/file/hfZAi64Mkgfm3z7kyNvzCS/Final-Portfolio-2023?node-id=45%3A262&t=O4L9US8uRkN5HuMk-1
+
+## Staging
+* Click here to view the initial output: https://staging-gichelleamon2023.netlify.app/
+
+## Production
+* Coming soon!
+
 
 ## Development server
 
