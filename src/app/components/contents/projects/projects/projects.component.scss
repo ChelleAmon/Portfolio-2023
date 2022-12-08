@@ -1,0 +1,65 @@
+@import '../../../../../styles.scss';
+
+// Desktop and wide screens
+#projects-section-page{
+  max-width: 1200px;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+
+  .projects-title-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  .project-blocks-section {
+    display: flex;
+    flex-wrap: row nowrap;
+    gap: 2rem;
+    padding: 30px 20px;
+
+    .project-block {
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+      box-shadow: 7px 4px 4px 6px rgba(73, 88, 103, 0.25), 15px 6px 4px 6px rgba(193, 140, 93, 0.25), 20px 10px 4px 6px rgba(206, 121, 107, 0.25);
+      border-radius: 50px 0px;
+      padding: 25px 30px;
+
+      .title-section{
+        display: flex;
+        justify-content: center;
+      }
+      .image-section {
+        display: flex;
+        align-self: center;
+      }
+      .description {
+        padding: 25px 0 10px;
+        p {
+          line-height: 110%;
+          font-size: 20px;
+        }
+      }
+      .technologies {
+        padding: 15px 0 20px;
+        p {
+          font-size: 20px;
+          line-height: 110%;
+          font-weight: 700;
+        }
+      }
+      .demo-section {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+    }
+  }
+  .my-image-section {
+    display: flex;
+    align-self: center;
+  }
+}
