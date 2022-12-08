@@ -63,3 +63,41 @@
     align-self: center;
   }
 }
+
+
+// Mobile Screens
+
+@media (max-width: $size__standard-mobile){
+  #projects-section-page {
+   padding: 0 30px;
+
+   .project-blocks-section{
+    flex-direction: column;
+
+    .project-block {
+      .description{
+        p {
+       font-size: 16px;
+        }
+      }
+      .technologies {
+        p {
+          font-size: 16px;
+        }
+      }
+      .demo-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+    }
+//  certain blocks are temporarily hidden as the data perceived are static.
+    .hide-second-block, .hide-third-block {
+      display: none;
+    }
+   }
+  }
+  .my-image-section {
+    width: 80%;
+  }
+}
