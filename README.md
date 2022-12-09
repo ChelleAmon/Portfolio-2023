@@ -1,7 +1,10 @@
 # Portfolio 2023
 
 ## Description
-My online portfolio showcasing the technologies and skills I gained during my apprenticeship and some projects I have worked on. 
+My online portfolio showcasing the technologies and skills I gained during my apprenticeship and some projects I have worked on.
+
+## Wiki
+Here is the link to view my wiki page. You will see my journey in making the portfolio site. [Click here to go to the Wiki page](https://github.com/ChelleAmon/Portfolio-2023/wiki)
 
 ## Technologies used on this project
 * Typescript
@@ -18,6 +21,8 @@ My online portfolio showcasing the technologies and skills I gained during my ap
 ## Production
 * Coming soon!
 
+_______________________
+# Angular Setup
 
 ## Development server
 
