@@ -1,23 +1,71 @@
 @import '../../../styles';
 
-.navigation-section {
+@mixin navBackground($padding, $gap){
   background: $color__navigation-body;
-  padding: 25px 40px;
+  padding: $padding;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items:center;
-  gap: 1.5rem;
+  gap: $gap;
+}
 
-  @media (max-width: $size__standard-mobile) {
-    flex-direction: column;
-    gap: 5rem;
+@mixin navLinks($padding, $fontsize){
+  display: flex;
+  padding: $padding;
+  font-size: $fontsize;
+  font-weight: 500;
+}
+
+
+.navbar-desktop {
+  display: block;
+
+  .navigation-section {
+    @include navBackground(25px 40px, 1.5rem);
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+
+    &-link {
+      @include navLinks(0 20px, 24px);
+    }
+  }
+}
+
+.navbar-mobile{
+  display: none;
+}
+
+
+@media (max-width: $size__standard-mobile) {
+  .navbar-desktop{
+    display: none;
   }
 
-  &-link {
-    display: flex;
-    padding: 0 20px;
-    font-size: 24px;
-    font-weight: 500;
+  .navbar-mobile{
+    display: block;
+
+    .navigation-section {
+      @include navBackground(25px 40px, 2rem);
+      flex-direction: column;
+      justify-content: center;
+      align-items:center;
+
+      .burger-menu {
+        display: block;
+      }
+
+      .hamburger-menu-close{
+        display: none;
+      }
+    }
+  }
+
+  .links-container {
+    display: none;
+    a {
+      @include navLinks(50px 20px, 24px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
