@@ -7,5 +7,6 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
+  pdfSrc = '../../../../../assets/files/Gichelle_Amon.pdf'
   constructor(public modalRef: MdbModalRef<ModalComponent>){}
 }
