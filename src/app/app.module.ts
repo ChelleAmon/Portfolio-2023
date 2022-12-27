@@ -13,6 +13,7 @@ import { ContactComponent } from './components/contents/contact/contact/contact.
 import { ContentsComponent } from './pages/contents/contents.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MdbModalModule
+    MdbModalModule,
+    PdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
