@@ -11,6 +11,8 @@ import { SkillsComponent } from './components/contents/skills/skills/skills.comp
 import { ProjectsComponent } from './components/contents/projects/projects/projects.component';
 import { ContactComponent } from './components/contents/contact/contact/contact.component';
 import { ContentsComponent } from './pages/contents/contents.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ContentsComponent } from './pages/contents/contents.component';
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
-    ContentsComponent
+    ContentsComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MdbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
