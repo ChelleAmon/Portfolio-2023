@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,9 +10,12 @@ export class NavigationComponent implements OnInit {
 
   navigationItems = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 
-  constructor() { }
+  constructor(private navigationService: NavigationService) { }
 
   ngOnInit(): void {
   }
 
+  testMe(){
+    return this.navigationService.testfunction()
+  }
 }
