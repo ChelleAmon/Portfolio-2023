@@ -18,13 +18,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  testMe(){
-    return this.navigationService.testfunction()
-  }
-
   openHamburgerMenu(opened: Boolean){
-    this.clicked = opened;
-    console.log('Nav Component, clicked AFTER status: ', this.clicked)
-    return this.navigationService.openHamburgerMenu(opened)
+   const burgerMenuIsOpen = this.navigationService.openHamburgerMenu(opened)
+   this.clicked = this.navigationService.isOpen
+   return burgerMenuIsOpen;
   }
 }
