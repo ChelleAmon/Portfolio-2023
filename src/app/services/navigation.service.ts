@@ -8,7 +8,8 @@ export class NavigationService {
 
   constructor() { }
 
-  openHamburgerMenu(flag: Boolean){
+  hamburgerMenuChangeState(flag: Boolean){
     this.isOpen = flag;
   }
 }
+
