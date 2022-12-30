@@ -49,18 +49,21 @@
       justify-content: center;
       align-items:center;
 
-      .burger-menu {
+      .burger-menu-img-section {
         display: block;
       }
 
-      .hamburger-menu-close{
+      .burger-menu-block-section{
         display: none;
       }
+      // .hamburger-menu-close{
+      //   display: none;
+      // }
     }
   }
 
   .links-container {
-    display: none;
+    // display: none;
     a {
       @include navLinks(50px 20px, 24px);
       flex-direction: column;
