@@ -15,7 +15,7 @@
     <div class="burger-menu-img-section" (click)="openHamburgerMenu(true)" [ngStyle]="{ 'display' : clicked == true ?  'none' : 'block'}">
       <img [src]="hamburger_menu_open">
     </div>
-    <div class="burger-menu-block-section">
+    <div class="burger-menu-block-section" [ngStyle]="{ 'display' : clicked == false ?  'none' : 'block'}">
       <div class="hamburger-menu-close">
         <img [src]="hamburger_menu_close">
       </div>
