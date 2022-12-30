@@ -12,7 +12,7 @@
 <!-- Mobile version: Start -->
 <div class="navbar-mobile">
   <nav class="navigation-section">
-    <div class="burger-menu-img-section" (click)="testMe()">
+    <div class="burger-menu-img-section" (click)="openHamburgerMenu(true)" [ngStyle]="{ 'display' : clicked == true ?  'none' : 'block'}">
       <img src="../../../assets/uploads/Hamburger Menu.png">
     </div>
     <div class="burger-menu-block-section">
