@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +15,7 @@ import { ProjectsComponent } from './components/contents/projects/projects/proje
 import { ContactComponent } from './components/contents/contact/contact/contact.component';
 import { ContentsComponent } from './pages/contents/contents.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     AppRoutingModule,
     MdbModalModule,
     PdfViewerModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
