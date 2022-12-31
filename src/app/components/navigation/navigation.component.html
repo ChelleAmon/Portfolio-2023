@@ -12,11 +12,9 @@
 <!-- Mobile version: Start -->
 <div class="navbar-mobile">
   <nav class="navigation-section">
-    <!-- <div class="burger-menu-img-section" (click)="hamburgerMenuChangeState(true)" [ngStyle]="{ 'display' : clicked == true ?  'none' : 'block'}"> -->
     <div class="burger-menu-img-section" (click)="hamburgerMenuChangeState(true)" [@openClose]="clicked == true ? 'close': 'open'">
       <img [src]="hamburger_menu_open">
     </div>
-    <!-- <div class="burger-menu-block-section" (click)="hamburgerMenuChangeState(false)" [ngStyle]="{ 'display' : clicked == false ?  'none' : 'block'}"> -->
       <div class="burger-menu-img-section" (click)="hamburgerMenuChangeState(false)" [@openClose]="clicked == false ? 'close': 'open'">
       <div class="hamburger-menu-close">
         <img [src]="hamburger_menu_close">
