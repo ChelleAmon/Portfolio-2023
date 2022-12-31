@@ -25,19 +25,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       ]),
     ]),
   ]
-
-//   // On click
-// // Open overlay: "About";
-// // Animate: Move in Bottom;
-// animation-timing-function: ease-in;
-// animation-duration: 300ms;
-
-// // While hovering
-// // Open overlay: "About";
-// // Animate: Instant;
-// animation-duration: 0ms;
-
 })
+
 export class NavigationComponent implements OnInit {
   clicked: Boolean;
   hamburger_menu_open = '../../../assets/uploads/Hamburger Menu.png';
