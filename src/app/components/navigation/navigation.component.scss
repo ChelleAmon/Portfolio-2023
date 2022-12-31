@@ -48,22 +48,15 @@
       flex-direction: column;
       justify-content: center;
       align-items:center;
-
-      .burger-menu-img-section {
-        display: block;
-      }
-
-      .burger-menu-block-section{
-        display: none;
-      }
-      // .hamburger-menu-close{
-      //   display: none;
-      // }
     }
   }
 
+  .hamburger-menu-close{
+    display: flex;
+    justify-content: center;
+  }
+
   .links-container {
-    // display: none;
     a {
       @include navLinks(50px 20px, 24px);
       flex-direction: column;
