@@ -25,4 +25,10 @@ export class NavigationComponent implements OnInit {
    this.clicked = this.navigationService.isOpen
    return burgerMenuIsOpen;
   }
+
+  openNavLinkPage(){
+    const link = this.navigationService.openNavLinkPage();
+    this.clicked = this.navigationService.isOpen;
+    return link;
+  }
 }

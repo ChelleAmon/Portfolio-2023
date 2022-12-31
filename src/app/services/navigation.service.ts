@@ -11,5 +11,9 @@ export class NavigationService {
   hamburgerMenuChangeState(flag: Boolean){
     this.isOpen = flag;
   }
+
+  openNavLinkPage(){
+    this.isOpen = false;
+  }
 }
 
