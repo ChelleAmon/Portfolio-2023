@@ -1,11 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
+  animations: [
+    trigger('openClose', [
+
+      state('open', style({
+        display: 'block',
+      })),
+
+      state('close', style({
+        display: 'none'
+      })),
+
+      transition('open => closed', [
+        animate("3s ease-in")
+      ]),
+      transition('closed => open', [
+        animate("0s")
+      ]),
+    ]),
+  ]
 })
+
 export class NavigationComponent implements OnInit {
   clicked: Boolean;
   hamburger_menu_open = '../../../assets/uploads/Hamburger Menu.png';
