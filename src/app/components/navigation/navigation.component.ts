@@ -17,11 +17,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         display: 'none'
       })),
 
-      transition('open => closed', [
-        animate("3s ease-in")
+      transition('open => close', [
+        animate("1s ease-in")
       ]),
-      transition('closed => open', [
-        animate("0s")
+      transition('close => open', [
+        animate("1s ease-out")
       ]),
     ]),
   ]
