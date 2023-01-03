@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,7 @@ import { ModalComponent } from './components/modal/modal.component';
     ProjectsComponent,
     ContactComponent,
     ContentsComponent,
-    ModalComponent
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +37,8 @@ import { ModalComponent } from './components/modal/modal.component';
     MdbModalModule,
     PdfViewerModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
