@@ -14,6 +14,77 @@
   font-weight: 500;
 }
 
+.navbar-desktop .navigation-section-link {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 150%;
+    left: 0;
+    transition: all 0.5s;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ECC8AF;
+    position: absolute;
+    top: 150%;
+    right: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover:before {
+    width: 50%;
+    transform: translateX(100%);
+  }
+
+  &:hover:after {
+    width: 50%;
+    transform: translateX(-100%);
+  }
+}
+
+.navbar-mobile .navigation-section-link {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    transition: all 0.5s;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ECC8AF;
+    position: absolute;
+    top: 65%;
+    right: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover:before {
+    width: 50%;
+    transform: translateX(100%);
+  }
+
+  &:hover:after {
+    width: 50%;
+    transform: translateX(-100%);
+  }
+}
 
 .navbar-desktop {
   display: block;
