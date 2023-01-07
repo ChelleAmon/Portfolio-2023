@@ -14,7 +14,7 @@
   font-weight: 500;
 }
 
-.navbar-desktop .navigation-section-link {
+@mixin navbar-link-animation($top: 150%) {
   position: relative;
 
   &:before {
@@ -23,7 +23,7 @@
     height: 5px;
     background-color: #ffffff;
     position: absolute;
-    top: 150%;
+    top: $top;
     left: 0;
     transition: all 0.5s;
   }
@@ -34,7 +34,7 @@
     height: 5px;
     background-color: #ECC8AF;
     position: absolute;
-    top: 150%;
+    top: $top;
     right: 0;
     transition: all 0.5s;
   }
@@ -50,40 +50,12 @@
   }
 }
 
+.navbar-desktop .navigation-section-link {
+  @include navbar-link-animation;
+}
+
 .navbar-mobile .navigation-section-link {
-  position: relative;
-
-  &:before {
-    content: "";
-    width: 0;
-    height: 5px;
-    background-color: #ffffff;
-    position: absolute;
-    top: 65%;
-    left: 0;
-    transition: all 0.5s;
-  }
-
-  &:after {
-    content: "";
-    width: 0;
-    height: 5px;
-    background-color: #ECC8AF;
-    position: absolute;
-    top: 65%;
-    right: 0;
-    transition: all 0.5s;
-  }
-
-  &:hover:before {
-    width: 50%;
-    transform: translateX(100%);
-  }
-
-  &:hover:after {
-    width: 50%;
-    transform: translateX(-100%);
-  }
+  @include navbar-link-animation(65%);
 }
 
 .navbar-desktop {
@@ -104,7 +76,6 @@
 .navbar-mobile{
   display: none;
 }
-
 
 @media (max-width: $size__standard-mobile) {
   .navbar-desktop{
