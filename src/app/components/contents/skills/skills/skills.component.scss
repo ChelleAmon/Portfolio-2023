@@ -24,6 +24,10 @@
     object-fit: cover;
     width: 100%;
     flex-basis: 60%;
+
+    img {
+      max-width: 90%;
+    }
   }
 
   .tech-skills-blocks-section {
