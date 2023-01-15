@@ -2,25 +2,25 @@
     <div class="contact-title-section">
       <h1>Let us get in touch!</h1>
     </div>
-    <div class="form-body-section">
+    <div class="form-body-section" [formGroup]="contactForm" >
       <div class="email-address-section">
         <label for="email">Email: </label>
-        <input type="email" name="email" placeholder="Enter your email address">
+        <input type="email" name="email" placeholder="Enter your email address" formControlName="email">
       </div>
       <div class="email-body-section">
         <label for="message">Message: </label>
-        <textarea name="message" id="" cols="18" rows="15" placeholder="Enter your message here"></textarea>
+        <textarea name="message" id="" cols="18" rows="15" placeholder="Enter your message here" formControlName="message"></textarea>
       </div>
       <div class="call-of-action-section">
         <div class="send-button-block">
-          <button class="send-button button_persian-orange">Send</button>
+          <button class="send-button button_persian-orange" type="submit" (click)="sendEmail()">Send</button>
         </div>
         <div class="reset-button-block">
-          <button class="reset-button button_black-coral">Reset</button>
+          <button class="reset-button button_black-coral" type="reset" (click)="resetEmail()">Reset</button>
         </div>
       </div>
     </div>
 </div>
 <div class="contact-image-section">
-  <img src="../../../../../assets/uploads//contact-me.png" alt="">
+  <img [src]="contact_me_image" alt="">
 </div>

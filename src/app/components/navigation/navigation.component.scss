@@ -1,23 +1,109 @@
 @import '../../../styles';
 
-.navigation-section {
+@mixin navBackground($padding, $gap){
   background: $color__navigation-body;
-  padding: 25px 40px;
+  padding: $padding;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items:center;
-  gap: 1.5rem;
+  gap: $gap;
+}
 
-  @media (max-width: $size__standard-mobile) {
-    flex-direction: column;
-    gap: 5rem;
+@mixin navLinks($padding, $fontsize){
+  display: flex;
+  padding: $padding;
+  font-size: $fontsize;
+  font-weight: 500;
+}
+
+@mixin navbar-link-animation($top: 150%) {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    top: $top;
+    left: 0;
+    transition: all 0.5s;
   }
 
-  &-link {
+  &:after {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ECC8AF;
+    position: absolute;
+    top: $top;
+    right: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover:before {
+    width: 50%;
+    transform: translateX(100%);
+  }
+
+  &:hover:after {
+    width: 50%;
+    transform: translateX(-100%);
+  }
+}
+
+.navbar-desktop .navigation-section-link {
+  @include navbar-link-animation;
+}
+
+.navbar-mobile .navigation-section-link {
+  @include navbar-link-animation(65%);
+}
+
+.navbar-desktop {
+  display: block;
+
+  .navigation-section {
+    @include navBackground(25px 40px, 1.5rem);
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+
+    &-link {
+      @include navLinks(0 20px, 24px);
+    }
+  }
+}
+
+.navbar-mobile{
+  display: none;
+}
+
+@media (max-width: $size__standard-mobile) {
+  .navbar-desktop{
+    display: none;
+  }
+
+  .navbar-mobile{
+    display: block;
+
+    .navigation-section {
+      @include navBackground(25px 40px, 2rem);
+      flex-direction: column;
+      justify-content: center;
+      align-items:center;
+    }
+  }
+
+  .hamburger-menu-close{
     display: flex;
-    padding: 0 20px;
-    font-size: 24px;
-    font-weight: 500;
+    justify-content: center;
+  }
+
+  .links-container {
+    a {
+      @include navLinks(50px 20px, 24px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

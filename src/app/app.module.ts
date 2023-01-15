@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +15,8 @@ import { SkillsComponent } from './components/contents/skills/skills/skills.comp
 import { ProjectsComponent } from './components/contents/projects/projects/projects.component';
 import { ContactComponent } from './components/contents/contact/contact/contact.component';
 import { ContentsComponent } from './pages/contents/contents.component';
+import { ModalComponent } from './components/modal/modal.component';
+
 
 @NgModule({
   declarations: [
@@ -22,11 +28,17 @@ import { ContentsComponent } from './pages/contents/contents.component';
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
-    ContentsComponent
+    ContentsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MdbModalModule,
+    PdfViewerModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
