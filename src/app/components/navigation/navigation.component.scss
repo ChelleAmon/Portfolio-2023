@@ -14,6 +14,49 @@
   font-weight: 500;
 }
 
+@mixin navbar-link-animation($top: 150%) {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    top: $top;
+    left: 0;
+    transition: all 0.5s;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #ECC8AF;
+    position: absolute;
+    top: $top;
+    right: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover:before {
+    width: 50%;
+    transform: translateX(100%);
+  }
+
+  &:hover:after {
+    width: 50%;
+    transform: translateX(-100%);
+  }
+}
+
+.navbar-desktop .navigation-section-link {
+  @include navbar-link-animation;
+}
+
+.navbar-mobile .navigation-section-link {
+  @include navbar-link-animation(65%);
+}
 
 .navbar-desktop {
   display: block;
@@ -33,7 +76,6 @@
 .navbar-mobile{
   display: none;
 }
-
 
 @media (max-width: $size__standard-mobile) {
   .navbar-desktop{
