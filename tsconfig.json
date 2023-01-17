@@ -1,0 +1,32 @@
+{
+    "include": [
+      "src/server/**/*",
+      "src/shared/**/*"
+    ],
+    "exclude": [
+      "src/client/**/*",
+      "node_modules/*",
+      "public/*"
+    ],
+    "ts-node": {
+      "files": true
+    },
+    "display": "MEAN",
+    "_version": "1.0.0",
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "importsNotUsedAsValues": "preserve",
+      "sourceMap": true,
+      "isolatedModules": false,
+      "target": "ESNEXT",
+      "module": "ES2020",
+      "outDir": "dist",
+      "rootDir": "src",
+      "strict": true,
+      "noUncheckedIndexedAccess": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "strictNullChecks": false
+    }
+  }
