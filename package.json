@@ -5,6 +5,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
+    "start": "node dist/server/server.js",
     "dev-server": "concurrently npm:dev-server:*",
     "dev-server:compile": "rm -rf ./dist/server/ && rm -rf ./dist/shared/ && tsc -w",
     "dev-server:run": "nodemon"

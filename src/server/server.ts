@@ -9,7 +9,7 @@ dotenv.config();
 
 const __dirname = path.resolve();
 const app = express();
-const clientPath = path.join(__dirname, '/dist/client');
+const clientPath = path.join(__dirname, 'dist/client');
 const PORT = 3000; // temporary. Save it in the env file
 const mail_user = {
     test_emailfrom: process.env.TEST_EMAILFROM,
@@ -73,12 +73,15 @@ app.post("/sendmail", (req,res) => {
             }
         })
 })
-app.listen(PORT, () => {
-    console.log(`Success! Starting localhost http://localhost:${PORT}`)
 
-});
 
 app.all("*", function (req, res) {
-    const filePath = path.join(__dirname, '/dist/client/index.html');
+    const filePath = path.join(__dirname, 'dist/client/index.html');
     res.sendFile(filePath);
   });
+
+
+app.listen(PORT, () => {
+    console.log(`Success! Starting localhost http://localhost:${PORT}`)
+});
+
