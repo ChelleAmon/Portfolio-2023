@@ -25,34 +25,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-const sendMail = (user: any, callback: any) => {
-    const transporter = nodemailer.createTransport({
-        /*
-        // I will keep these mail properties for now. 
-        // host: "smtp.gmail.com",
-        // port: 587,
-        // secure: true,
-        */
-        service: 'gmail',
-        auth: {
-            type: 'OAUTH2',
-            user : mail_user.test_emailfrom,
-            pass: mail_user.password,
-            clientId: process.env.OAUTH_CLIENTID,
-            clientSecret: process.env.OAUTH_CLIENT_SECRET,
-            refreshToken: process.env.OAUTH_REFRESH_TOKEN
-        }
-    })
-    const mailOptions = {
-        from: mail_user.test_emailfrom,
-        to: mail_user.emailto,
-        subject: "Test nodemail email",
-        text: "Whyyyyyyyyyyyy?? why is this working?"
-    }
-    transporter.sendMail(mailOptions, callback)
-
-}
-
 
 app.get("/", (req, res) => {
     res.send("Congratulations! Server is running successfully.")
@@ -60,9 +32,8 @@ app.get("/", (req, res) => {
 
 
 app.post("/sendmail", (req,res) => {
-    console.log("request came");
     let user: string = req.body;
-    sendMail(user, (err: any, info: any) => {
+    sendMail(user, (err: Error, info: any) => {
             if (err) {
                 console.log("Error: ", err);
                 res.status(400);
@@ -71,8 +42,57 @@ app.post("/sendmail", (req,res) => {
                 console.log("Email has been sent")
                 res.send(info)
             }
-        })
-})
+        });
+
+        async function sendMail(user: any, cb:any){
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    type: 'OAUTH2',
+                    user : mail_user.test_emailfrom,
+                    clientId: process.env.OAUTH_CLIENTID,
+                    clientSecret: process.env.OAUTH_CLIENT_SECRET,
+                    refreshToken: process.env.OAUTH_REFRESH_TOKEN
+                }
+            });
+
+            const mailOptions = {
+                from: user.from,
+                to: mail_user.test_emailfrom,
+                subject: "Portfolio 2023: Consultation",
+                html: `<p>${user.html}</p>`
+            };
+
+            let info = await transporter.sendMail(mailOptions);
+
+            cb(info.messageId);
+        }
+    }
+)
+
+// const sendMail = (user: any, callback: any) => {
+//     const transporter = nodemailer.createTransport({
+//         service: 'gmail',
+//         auth: {
+//             type: 'OAUTH2',
+//             user : mail_user.test_emailfrom,
+//             pass: mail_user.password,
+//             clientId: process.env.OAUTH_CLIENTID,
+//             clientSecret: process.env.OAUTH_CLIENT_SECRET,
+//             refreshToken: process.env.OAUTH_REFRESH_TOKEN
+//         }
+//     })
+//     const mailOptions = {
+//         from: mail_user.test_emailfrom,
+//         to: mail_user.emailto,
+//         subject: "Test nodemail email",
+//         html: "Whyyyyyyyyyyyy?? why is this working?"
+//     }
+//     transporter.sendMail(mailOptions, callback)
+
+// }
+
+
 
 
 app.all("*", function (req, res) {
