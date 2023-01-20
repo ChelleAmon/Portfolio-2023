@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/sendmail", (req,res) => {
+app.post("/api/sendmail", (req,res) => {
     let user: string = req.body;
     sendMail(user, (err: Error, info: any) => {
             if (err) {
