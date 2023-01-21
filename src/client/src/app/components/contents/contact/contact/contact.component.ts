@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { KeyLike } from 'crypto';
 import { of } from 'rxjs';
 import { ContactusService } from 'src/app/services/contactus.service';
 
@@ -12,6 +13,7 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
   contact_me_image = "../../../../../assets/uploads//contact-me.png";
+  isSent: Boolean = false
 
   constructor(private fb: FormBuilder, private contactusService: ContactusService) {
 
@@ -52,5 +54,21 @@ export class ContactComponent implements OnInit {
 
   resetEmail(){
     this.contactForm.reset();
+  }
+
+  displaySuccessTemplate() {
+    return {
+      'background-color': 'goldenrod',
+      'width' : '300px',
+      'height' : '200px'
+    }
+  }
+
+  displayErrorTemplate(){
+    return {
+      'background-color': 'red',
+      'width' : '300px',
+      'height' : '200px'
+    }
   }
 }
