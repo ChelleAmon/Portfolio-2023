@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { KeyLike } from 'crypto';
-import { of } from 'rxjs';
 import { ContactusService } from 'src/app/services/contactus.service';
+
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +13,7 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   contact_me_image = "../../../../../assets/uploads//contact-me.png";
   isSent: Boolean = false
+  hasError: Boolean = false
 
   constructor(private fb: FormBuilder, private contactusService: ContactusService) {
 
@@ -43,12 +43,22 @@ export class ContactComponent implements OnInit {
         next: () => {
           console.log("Res: ", contactUs.from)
           console.log("Res: ", contactUs.html)
+          this.isSent = true
+          this.hasError = false
         },
-        error: (err) => console.log("Errorzzzzz: ", err ),
-        complete: () => this.contactForm.reset()
+        error: (err) => {
+          console.log("Errorzzzzz: ", err )
+          this.isSent = false
+          this.hasError = true
+        },
+        complete: () => {
+          this.contactForm.reset();
+        }
       })
     }else {
       console.log('One of the fields is invalid!')
+      this.isSent = false
+      this.hasError = true
     }
   }
 

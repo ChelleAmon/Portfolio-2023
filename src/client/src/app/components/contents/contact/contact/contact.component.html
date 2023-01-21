@@ -21,8 +21,8 @@
       </div>
     </div>
 </div>
-<div [ngStyle]="displaySuccessTemplate()">Message sent! </div>
-<div [ngStyle]="displayErrorTemplate()">Error! There is an issue. Please try again.</div>
+<div [ngStyle]="isSent == true ? displaySuccessTemplate() : {'display' : 'none'}" >Message sent! </div>
+<div [ngStyle]="hasError == true ? displayErrorTemplate() : {'display' : 'none'}" >Error! There is an issue. Please try again.</div>
 <div class="contact-image-section">
   <img [src]="contact_me_image" alt="">
 </div>
