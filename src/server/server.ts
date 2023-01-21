@@ -34,15 +34,15 @@ app.get("/", (req, res) => {
 app.post("/api/sendmail", (req,res) => {
     let user: string = req.body;
     sendMail(user, (err: Error, info: any) => {
-            if (err) {
-                console.log("Error: ", err);
-                res.status(400);
-                res.send({error: "Failed to send email"})
-            } else {
-                console.log("Email has been sent")
-                res.send(info)
-            }
-        });
+        try {
+            console.log("Email has been sent")
+            res.send(info)
+        } catch (error) {
+            res.status(500)
+            res.send(err)
+            console.log("From server error: ", error, err) // leave for testing
+        }
+    });
 
         async function sendMail(user: any, cb:any){
             const transporter = nodemailer.createTransport({
@@ -69,31 +69,6 @@ app.post("/api/sendmail", (req,res) => {
         }
     }
 )
-
-// const sendMail = (user: any, callback: any) => {
-//     const transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         auth: {
-//             type: 'OAUTH2',
-//             user : mail_user.test_emailfrom,
-//             pass: mail_user.password,
-//             clientId: process.env.OAUTH_CLIENTID,
-//             clientSecret: process.env.OAUTH_CLIENT_SECRET,
-//             refreshToken: process.env.OAUTH_REFRESH_TOKEN
-//         }
-//     })
-//     const mailOptions = {
-//         from: mail_user.test_emailfrom,
-//         to: mail_user.emailto,
-//         subject: "Test nodemail email",
-//         html: "Whyyyyyyyyyyyy?? why is this working?"
-//     }
-//     transporter.sendMail(mailOptions, callback)
-
-// }
-
-
-
 
 app.all("*", function (req, res) {
     const filePath = path.join(__dirname, 'dist/client/index.html');

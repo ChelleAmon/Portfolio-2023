@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { of } from 'rxjs';
 import { ContactusService } from 'src/app/services/contactus.service';
 
 @Component({
@@ -30,12 +31,6 @@ export class ContactComponent implements OnInit {
   }
 
   sendEmail(){
-  //  if(this.contactForm.valid){
-  //   console.log('Email Successfully sent');
-  //   console.log('Email: ', this.contactForm.value.email)
-  //   console.log('message: ', this.contactForm.value.message)
-  //   this.contactForm.reset();
-  //  }
     if (this.contactForm.valid){
       let contactUs = {
         from: this.contactForm.value.from,
@@ -43,12 +38,13 @@ export class ContactComponent implements OnInit {
       }
 
       this.contactusService.sendEmail(contactUs).subscribe({
-        next: (data: any) => console.log(data),
+        next: () => {
+          console.log("Res: ", contactUs.from)
+          console.log("Res: ", contactUs.html)
+        },
         error: (err) => console.log("Errorzzzzz: ", err ),
         complete: () => this.contactForm.reset()
       })
-
-      this.contactForm.reset();
     }else {
       console.log('One of the fields is invalid!')
     }
@@ -58,21 +54,3 @@ export class ContactComponent implements OnInit {
     this.contactForm.reset();
   }
 }
-
-// this.emailService.sendEmail(user).subscribe(
-//   data => {
-//     let res:any = data;
-//   },
-//   err => {
-//     this.loading = false;
-//     this.buttonText = "Submit";
-//   },() => {
-//     this.loading = false;
-//     this.buttonText = "Submit";
-//     this.nameFormControl.reset();
-//     this.emailFormControl.reset();
-//     this.subjectFormControl.reset();
-//     this.textareaFormControl.reset();
-//   }
-// );
-// }
