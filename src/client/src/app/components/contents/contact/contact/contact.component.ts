@@ -30,12 +30,6 @@ export class ContactComponent implements OnInit {
   }
 
   sendEmail(){
-  //  if(this.contactForm.valid){
-  //   console.log('Email Successfully sent');
-  //   console.log('Email: ', this.contactForm.value.email)
-  //   console.log('message: ', this.contactForm.value.message)
-  //   this.contactForm.reset();
-  //  }
     if (this.contactForm.valid){
       let contactUs = {
         from: this.contactForm.value.from,
