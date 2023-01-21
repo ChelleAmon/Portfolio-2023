@@ -58,21 +58,3 @@ export class ContactComponent implements OnInit {
     this.contactForm.reset();
   }
 }
-
-// this.emailService.sendEmail(user).subscribe(
-//   data => {
-//     let res:any = data;
-//   },
-//   err => {
-//     this.loading = false;
-//     this.buttonText = "Submit";
-//   },() => {
-//     this.loading = false;
-//     this.buttonText = "Submit";
-//     this.nameFormControl.reset();
-//     this.emailFormControl.reset();
-//     this.subjectFormControl.reset();
-//     this.textareaFormControl.reset();
-//   }
-// );
-// }
