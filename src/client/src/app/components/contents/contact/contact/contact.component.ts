@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { of } from 'rxjs';
 import { ContactusService } from 'src/app/services/contactus.service';
 
 @Component({
@@ -37,12 +38,13 @@ export class ContactComponent implements OnInit {
       }
 
       this.contactusService.sendEmail(contactUs).subscribe({
-        next: (data: any) => console.log(data),
+        next: () => {
+          console.log("Res: ", contactUs.from)
+          console.log("Res: ", contactUs.html)
+        },
         error: (err) => console.log("Errorzzzzz: ", err ),
         complete: () => this.contactForm.reset()
       })
-
-      this.contactForm.reset();
     }else {
       console.log('One of the fields is invalid!')
     }
