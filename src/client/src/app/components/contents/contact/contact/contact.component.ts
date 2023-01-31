@@ -99,4 +99,12 @@ export class ContactComponent implements OnInit {
       "padding": '1.5rem 2rem',
     }
   }
+
+
+  hideTemplate(){
+    return {
+      'display': 'none'
+    }
+  }
 }
+
