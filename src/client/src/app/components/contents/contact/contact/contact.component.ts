@@ -68,17 +68,43 @@ export class ContactComponent implements OnInit {
 
   displaySuccessTemplate() {
     return {
-      'background-color': 'goldenrod',
-      'width' : '300px',
-      'height' : '200px'
+      'background': '#FFFFFF',
+      'border': '2px solid #27672D',
+      'font-family': 'Playfair Display',
+      'line-height': '1.5%',
+      'font-size': '1.25rem',
+      'color': '#27672D',
+      'display': 'flex',
+      'justify-content': 'center',
+      'align-items': 'center',
+      'margin': 'auto',
+      'max-width' : '70%',
+      "padding": '1.5rem 2rem',
     }
   }
 
   displayErrorTemplate(){
     return {
-      'background-color': 'red',
-      'width' : '300px',
-      'height' : '200px'
+      'background': '#FFFFFF',
+      'border': '2px solid #AC1818',
+      'font-family': 'Playfair Display',
+      'line-height': '1.5%',
+      'font-size': '1.25rem',
+      'color': '#AC1818',
+      'display': 'flex',
+      'justify-content': 'center',
+      'align-items': 'center',
+      'margin': 'auto',
+      'max-width' : '70%',
+      "padding": '1.5rem 2rem',
+    }
+  }
+
+
+  hideTemplate(){
+    return {
+      'display': 'none'
     }
   }
 }
+
