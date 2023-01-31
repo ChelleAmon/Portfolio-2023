@@ -32,7 +32,7 @@ export class NavigationComponent implements OnInit {
   hamburger_menu_open = '../../../assets/uploads/Hamburger Menu.png';
   hamburger_menu_close="../../../assets/uploads/close-navbar.png";
 
-  navigationItems = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+  navigationItems = ['Home', 'About', 'Skills', 'Contributions', 'Contact']
 
   constructor(private navigationService: NavigationService) {
     this.clicked = this.navigationService.isOpen
