@@ -18,11 +18,18 @@ export class ContactComponent implements OnInit {
   constructor(private fb: FormBuilder, private contactusService: ContactusService) {
 
     this.contactForm = this.fb.group({
-      from: [
+      name: [
+        '',
+        Validators.compose([Validators.required])
+      ],
+      email: [
         '',
        Validators.compose([ Validators.required, Validators.email ])
       ],
-      html: [
+      phone: [
+        '',
+      ],
+      message: [
         '',
        Validators.compose([ Validators.required, Validators.minLength(3)])
       ]
@@ -35,16 +42,16 @@ export class ContactComponent implements OnInit {
   sendEmail(){
     if (this.contactForm.valid){
       let contactUs = {
-        from: this.contactForm.value.from,
-        html: this.contactForm.value.html
+        name: this.contactForm.value.name,
+        email: this.contactForm.value.email,
+        phone: this.contactForm.value.phone,
+        message: this.contactForm.value.message
       }
 
       this.contactusService.sendEmail(contactUs).subscribe({
         next: () => {
-          console.log("Res: ", contactUs.from)
-          console.log("Res: ", contactUs.html)
+          this.hasError = this.isSent
           this.isSent = true
-          this.hasError = false
         },
         error: (err) => {
           console.log("Errorzzzzz: ", err )
