@@ -57,15 +57,23 @@ app.post("/api/sendmail", (req,res) => {
             });
 
             const mailOptions = {
-                from: user.from,
+                from: user.email, // change this to default email address 
                 to: mail_user.test_emailfrom,
-                subject: "Portfolio 2023: Consultation",
-                html: `<p>${user.html}</p>`
+                subject: `Portfolio 2023: ${user.name} messaged you!`,
+                html: `
+                <h3>Sender Information: </h3>
+                    <strong>Name: </strong> <p>${user.name}</p>
+                    <strong>Email Address: </strong><p>${user.email}</p>
+                    <strong>Phone Number: </strong><p>${user.phone}</p>
+                    <hr>
+                <h3>Message: </h3>
+                <p>${user.message}</p>
+                `
             };
 
             let info = await transporter.sendMail(mailOptions);
 
-            cb(info.messageId);
+            cb(info.accepted)
         }
     }
 )
