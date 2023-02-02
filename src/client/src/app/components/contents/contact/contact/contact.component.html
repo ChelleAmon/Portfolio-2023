@@ -4,8 +4,16 @@
     </div>
     <div class="form-body-section" [formGroup]="contactForm" >
       <div class="email-address-section">
+        <label for="name">Name: </label>
+        <input type="text" name="name" placeholder="Enter your name" formControlName="name">
+      </div>
+      <div class="email-address-section">
         <label for="email">Email: </label>
         <input type="email" name="email" placeholder="Enter your email address" formControlName="email">
+      </div>
+      <div class="email-address-section">
+        <label for="phone">Phone: </label>
+        <input type="text" name="phone" placeholder="Enter your phone number. No worries, it is optional" formControlName="phone">
       </div>
       <div class="email-body-section">
         <label for="message">Message: </label>
@@ -21,6 +29,9 @@
       </div>
     </div>
 </div>
+<div [ngStyle]="isSent == true ? displaySuccessTemplate() : hideTemplate()" >Sent Successfully! Talk to you soon </div>
+<div [ngStyle]="hasError == true ? displayErrorTemplate() : hideTemplate()" >Sent Failed! Check the required fields and try again </div>
 <div class="contact-image-section">
   <img [src]="contact_me_image" alt="">
 </div>
+

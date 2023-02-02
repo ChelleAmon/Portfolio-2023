@@ -1,5 +1,3 @@
-PR template
-
 ## Changes
 _List Changes Introduced by this PR_
 1. Item 1
