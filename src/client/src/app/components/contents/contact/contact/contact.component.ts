@@ -15,6 +15,11 @@ export class ContactComponent implements OnInit {
   isSent: Boolean = false
   hasError: Boolean = false
 
+  hiddenTemplateStyle = {
+    'opacity': '0',
+    'transition' : 'all 2s ease-out'
+  }
+
   constructor(private fb: FormBuilder, private contactusService: ContactusService) {
 
     this.contactForm = this.fb.group({
@@ -54,7 +59,6 @@ export class ContactComponent implements OnInit {
           this.isSent = true
         },
         error: (err) => {
-          console.log("Errorzzzzz: ", err )
           this.isSent = false
           this.hasError = true
         },
@@ -73,45 +77,39 @@ export class ContactComponent implements OnInit {
     this.contactForm.reset();
   }
 
-  displaySuccessTemplate() {
+ displaySuccessTemplate() {
+
+    setTimeout(()=>{
+      this.isSent = false;
+    }, 5000);
+
     return {
       'background': '#FFFFFF',
       'border': '2px solid #27672D',
-      'font-family': 'Playfair Display',
-      'line-height': '1.5%',
-      'font-size': '1.25rem',
       'color': '#27672D',
-      'display': 'flex',
-      'justify-content': 'center',
-      'align-items': 'center',
-      'margin': 'auto',
-      'max-width' : '70%',
-      "padding": '1.5rem 2rem',
+      'opacity': '1',
+      'transition': 'all 1s ease-out'
     }
+
   }
 
   displayErrorTemplate(){
+    setTimeout(()=>{
+      this.hasError = false;
+    }, 3000);
+
     return {
       'background': '#FFFFFF',
       'border': '2px solid #AC1818',
-      'font-family': 'Playfair Display',
-      'line-height': '1.5%',
-      'font-size': '1.25rem',
       'color': '#AC1818',
-      'display': 'flex',
-      'justify-content': 'center',
-      'align-items': 'center',
-      'margin': 'auto',
-      'max-width' : '70%',
-      "padding": '1.5rem 2rem',
+      'opacity': '1',
+      'transition': 'all 1s ease-out'
     }
   }
 
 
   hideTemplate(){
-    return {
-      'display': 'none'
-    }
+    return this.hiddenTemplateStyle;
   }
 }
 
