@@ -31,6 +31,16 @@
       box-shadow: 7px 4px 4px 6px rgba(73, 88, 103, 0.25), 15px 6px 4px 6px rgba(193, 140, 93, 0.25), 20px 10px 4px 6px rgba(206, 121, 107, 0.25);
       border-radius: 50px 0px;
       padding: 25px 30px;
+      animation-delay: -1s;
+      animation-duration: 6s;
+      animation-fill-mode: none;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+
+      &:hover {
+        animation-name: bounce;
+        cursor: pointer;
+      }
 
       .title-section{
         display: flex;
@@ -75,7 +85,6 @@
 
 
 // Mobile Screens
-
 @media (max-width: $size__standard-mobile){
   #projects-section-page {
    padding: 0 10px;
@@ -84,7 +93,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 
     .project-block {
       max-width: 73%;
@@ -109,5 +117,21 @@
       display: none;
     }
    }
+  }
+}
+
+
+@keyframes bounce {
+  0%, 100%, 20%, 50%, 70% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-30px);
+  }
+  90% {
+    transform: translateY(-45px);
   }
 }
