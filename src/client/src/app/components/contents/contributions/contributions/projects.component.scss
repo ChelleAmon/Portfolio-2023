@@ -4,8 +4,11 @@
 #projects-section-page{
   max-width: 1200px;
   margin: 50px auto 0;
+  padding: 0 60px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .projects-title-section {
     display: flex;
@@ -17,12 +20,13 @@
   .project-blocks-section {
     display: flex;
     flex-wrap: row nowrap;
-    gap: 2rem;
+    gap: 4rem;
     padding: 30px 20px;
 
     .project-block {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       background: #FFFFFF;
       box-shadow: 7px 4px 4px 6px rgba(73, 88, 103, 0.25), 15px 6px 4px 6px rgba(193, 140, 93, 0.25), 20px 10px 4px 6px rgba(206, 121, 107, 0.25);
       border-radius: 50px 0px;
@@ -38,12 +42,17 @@
       }
       .description {
         padding: 25px 0 10px;
+        display: flex;
+        justify-content: center;
         p {
           line-height: 110%;
           font-size: 20px;
+          max-width: 80%;
         }
       }
       .technologies {
+        display: flex;
+        justify-content: center;
         padding: 15px 0 20px;
         p {
           font-size: 20px;
@@ -69,12 +78,16 @@
 
 @media (max-width: $size__standard-mobile){
   #projects-section-page {
-   padding: 0 30px;
+   padding: 0 10px;
 
    .project-blocks-section{
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 
     .project-block {
+      max-width: 73%;
       .description{
         p {
        font-size: 16px;
@@ -96,8 +109,5 @@
       display: none;
     }
    }
-  }
-  .my-image-section {
-    width: 80%;
   }
 }
