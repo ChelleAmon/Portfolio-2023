@@ -11,7 +11,7 @@ export class ProjectsComponent implements OnInit {
   contributions = [
     {
       name: 'MKG Tax Consulting',
-      imgUrl: '/',
+      imgUrl: "../../../../../assets/uploads/mkg.jpg",
       imgAlt: "Portfolio: MKG Tax Consulting screenshot",
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit {
     },
     {
       name: 'Foundation for FUSD',
-      imgUrl: '/',
+      imgUrl: "../../../../../assets/uploads/fusd.jpg",
       imgAlt: "Portfolio: Foundations for FUSD screenshot",
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -28,7 +28,7 @@ export class ProjectsComponent implements OnInit {
     },
     {
       name: 'The Elementals',
-      imgUrl: '/',
+      imgUrl: "../../../../../assets/uploads/rps.jpg",
       imgAlt: "Portfolio: The Elementals screenshot",
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
