@@ -11,7 +11,11 @@
   flex-flow: column nowrap;
   -ms-flex-flow: column nowrap;
   border: 3px solid $color__border-about-section;
-  border-radius: 100px 0px;
+  background: rgb(236,200,175);
+  background: linear-gradient(176deg, rgba(236,200,175,0.36738445378151263) 17%, rgba(231,173,153,1) 52%, rgba(45,228,254,1) 100%);  -webkit-backdrop-filter: blur( 18px );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.45 );
+  backdrop-filter: blur( 20px );
+  border-radius: 100px 10px;
 
 
   .about-me-title {
