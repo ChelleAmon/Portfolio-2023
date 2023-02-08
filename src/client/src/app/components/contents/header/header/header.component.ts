@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  socialMediaAnchorProps = {
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }
+
   constructor() { }
 
   ngOnInit(): void {
