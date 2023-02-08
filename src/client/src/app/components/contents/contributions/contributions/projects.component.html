@@ -4,91 +4,31 @@
   </div>
   <div class="project-blocks-section">
 
-    <!-- ---------------------------------- Project Blocks are static for now : START ---------------------------------- -->
-    <!-- FIRST: MKG Tax Consulting (START) -->
-
-    <div class="project-block">
-      <section class="title-section">
-        <h5 class="title">The Elementals</h5>
-      </section>
-      <section class="image-section">
-        <img src="../../../../../assets/uploads/rockpaperscissors.jpg" alt="The Elementals-Rock Paper Scissors" width="335" height="215">
-      </section>
-      <section class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </section>
-      <section class="technologies">
-        <p>Technologies: MEAN Stack, CSS, Heroku </p>
-      </section>
-      <section class="demo-section">
-        <button class="button_persian-orange">Live Demo</button>
-        <button class="button_black-coral">Source Code</button>
-      </section>
+  <div class="project-block" *ngFor="let contribution of contributions">
+    <section class="title-section">
+      <h5 class="title">{{contribution.name}}</h5>
+    </section>
+    <section class="image-section">
+      <img
+        [src]=contribution.imgUrl
+        [alt]=contribution.imgAlt
+        width="335"
+        height="215"
+      />
+    </section>
+    <section class="description">
+      <p>{{contribution.description}}</p>
+    </section>
+    <section class="technologies">
+      <p>Technologies: {{contribution.technologies}}</p>
+    </section>
+    <section class="demo-section">
+      <button class="button_persian-orange">Live Demo</button>
+      <button class="button_black-coral">Source Code</button>
+    </section>
   </div>
-
-  <!-- FIRST: MKG Tax Consulting (END) -->
-
-  <!-- SECOND: FUSD Foundation  (START) -->
-
-    <div class="project-block hide-second-block">
-      <section class="title-section">
-        <h5 class="title">The Elementals</h5>
-      </section>
-      <section class="image-section">
-        <img src="../../../../../assets/uploads/rockpaperscissors.jpg" alt="The Elementals-Rock Paper Scissors" width="335" height="215">
-      </section>
-      <section class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </section>
-      <section class="technologies">
-        <p>Technologies: MEAN Stack, CSS, Heroku </p>
-      </section>
-      <section class="demo-section">
-        <button class="button_persian-orange">Live Demo</button>
-        <button class="button_black-coral">Source Code</button>
-      </section>
-    </div>
-
-  <!-- SECOND: FUSD Foundation  (END) -->
-
-  <!-- THIRD: The Elementals (START) -->
-
-    <div class="project-block hide-third-block">
-      <section class="title-section">
-        <h5 class="title">The Elementals</h5>
-      </section>
-      <section class="image-section">
-        <img src="../../../../../assets/uploads/rockpaperscissors.jpg" alt="The Elementals-Rock Paper Scissors">
-      </section>
-      <section class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </section>
-      <section class="technologies">
-        <p>Technologies: MEAN Stack, CSS, Heroku </p>
-      </section>
-      <section class="demo-section">
-        <button class="button_persian-orange">Live Demo</button>
-        <button class="button_black-coral">Source Code</button>
-      </section>
-    </div>
-
-    <!-- THIRD: The Elementals (END) -->
-
-      <!-- ---------------------------------- Project Blocks are static for now : END ---------------------------------- -->
   </div>
   <div class="my-image-section">
-    <img src="../../../../../assets/uploads/projects-id.png" alt="Project Image ID">
+    <img [src]="imgUrl" alt="Project Image ID" />
   </div>
 </div>
