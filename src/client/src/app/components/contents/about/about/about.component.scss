@@ -19,16 +19,19 @@
   --border-size: 0.3rem;
   border: var(--border-size) solid transparent;
   background: rgba( 255, 255, 255, 0.1 );
-  background: linear-gradient(176deg, rgba(243, 243, 243, 0.367) , rgba(231,173,153,1) 52%, rgba(45,228,254,1) 100%),
+  background: linear-gradient(
+    176deg,
+    rgba(243, 243, 243, 0.367) 17%,
+    rgba(231,173,153,1) 52%,
+     rgba(45,228,254,1) 100%),
   conic-gradient(
     from var(--angle),
     #CF9490 0deg 90deg,
     #D3B970 90deg 180deg,
     #92ccad 180deg 270deg,
     #2DE4FE 270deg 360deg
-  )
-  ;
-  -webkit-backdrop-filter: blur( 18px );
+  );
+  -webkit-backdrop-filter: blur( 20px );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.45 );
   backdrop-filter: blur( 20px );
   background-origin: border-box;
