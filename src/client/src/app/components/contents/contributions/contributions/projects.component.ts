@@ -14,8 +14,8 @@ export class ProjectsComponent implements OnInit {
       imgUrl: "../../../../../assets/uploads/mkg.jpg",
       imgAlt: "Portfolio: MKG Tax Consulting screenshot",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      technologies: "MEAN Stack, CSS, Heroku",
+        'A leading tax preparation FinTech that provides virtual tax preparation, tax refund financial products accessible on mobile devices to customers with limited access to consumer credit.',
+      technologies: "PHP, CSS, BootStrap, Sass, JavaScript, WordPress, Gutenberg WPEngine",
       website: "https://mkgtaxconsultants.com/",
     },
     {
@@ -23,15 +23,17 @@ export class ProjectsComponent implements OnInit {
       imgUrl: "../../../../../assets/uploads/fusd.jpg",
       imgAlt: "Portfolio: Foundations for FUSD screenshot",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      website: "https://foundation4fusd.org/",
+        'A non-profit 501(c)3 organization dedicated to building community and business partnerships and engaging philantrophic organizations to empower every child to achieve their full potential.',
+        technologies: "PHP, CSS, BootStrap, Sass, JavaScript, WordPress, Gutenberg, WPEngine",
+        website: "https://foundation4fusd.org/",
     },
     {
       name: 'The Elementals',
       imgUrl: "../../../../../assets/uploads/rps.jpg",
       imgAlt: "Portfolio: The Elementals screenshot",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'A Full-Stack Rock-Paper-Scissor Game with the following game modes: Player vs Computer and Player vs Player.',
+      technologies: "MEAN Stack (MongoDB, Express.js, Angular 2, Node.js), CSS, REST API, Heroku",
       website: "/",
     },
   ];
