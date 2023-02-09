@@ -64,15 +64,13 @@
       filter: drop-shadow(10px 10px 9px rgba(206, 121, 107, 0.25));
       border: 1px solid $color__border-skills-newyorkpink;
       border-radius: 30px;
-      // animation-duration: 5s;
-      // animation-timing-function: ease-out;
-      // animation-fill-mode: none;
 
       &:hover {
         background: rgb(236,200,175);
         background: radial-gradient(circle, rgba(236,200,175,0.36738445378151263) 26%, rgba(231,173,153,1) 73%, rgba(73,88,103,1) 100%);
         transition: all ease-in-out 1s;
-      scale: 1.25;
+        font-weight: bolder;
+        scale: 1.25;
 
       }
     }
@@ -88,6 +86,7 @@
         background: rgb(73,88,103);
         background: radial-gradient(circle, rgba(73,88,103,1) 26%, rgba(231,173,153,1) 83%, rgba(236,200,175,0.36738445378151263) 100%);
         transition: all ease-in-out 1s;
+        font-weight: bolder;
         scale: 1.25;
       }
     }
@@ -123,14 +122,5 @@
         width: 80%;
       }
     }
-  }
-}
-
-
-@keyframes hoverChange {
-
-  100% {
-    background: rgb(236,200,175);
-background: radial-gradient(circle, rgba(236,200,175,0.36738445378151263) 26%, rgba(231,173,153,1) 73%, rgba(73,88,103,1) 100%);
   }
 }
