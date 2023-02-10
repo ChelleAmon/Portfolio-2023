@@ -7,13 +7,5 @@ export class NavigationService {
   isOpen: Boolean = false;
 
   constructor() { }
-
-  hamburgerMenuChangeState(flag: Boolean){
-    this.isOpen = flag;
-  }
-
-  openNavLinkPage(){
-    this.isOpen = false;
-  }
 }
 
