@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -28,28 +28,21 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 
 export class NavigationComponent implements OnInit {
-  clicked: Boolean;
   hamburger_menu_open = '../../../assets/uploads/Hamburger Menu.png';
   hamburger_menu_close="../../../assets/uploads/close-navbar.png";
 
   navigationItems = ['Home', 'About', 'Skills', 'Contributions', 'Contact']
 
+  @ViewChild("toggleMenu") toggleMenu!: ElementRef;
+
   constructor(private navigationService: NavigationService) {
-    this.clicked = this.navigationService.isOpen
-   }
+
+  }
 
   ngOnInit(): void {
   }
 
-  hamburgerMenuChangeState(opened: Boolean){
-   const burgerMenuIsOpen = this.navigationService.hamburgerMenuChangeState(opened)
-   this.clicked = this.navigationService.isOpen
-   return burgerMenuIsOpen;
-  }
-
-  openNavLinkPage(){
-    const link = this.navigationService.openNavLinkPage();
-    this.clicked = this.navigationService.isOpen;
-    return link;
+  getNavLinkClickState(event: any = this.navigationService.isOpen){
+    this.toggleMenu.nativeElement.checked = event;
   }
 }
