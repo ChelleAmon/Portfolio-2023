@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-navigation',
@@ -9,12 +8,10 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 
 export class NavigationComponent implements OnInit {
-  hamburger_menu_open = '../../../assets/uploads/Hamburger Menu.png';
-  hamburger_menu_close="../../../assets/uploads/close-navbar.png";
-
   navigationItems = ['Home', 'About', 'Skills', 'Contributions', 'Contact']
 
-  @ViewChild("toggleMenu") toggleMenu!: ElementRef;
+  @ViewChild("toggleMenu")
+  toggleMenu!: ElementRef;
 
   constructor(private navigationService: NavigationService) {
 
