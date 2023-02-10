@@ -58,6 +58,7 @@
   @include navbar-link-animation(65%);
 }
 
+// Desktop Navigation bar ---------------
 .navbar-desktop {
   display: block;
 
@@ -73,6 +74,7 @@
   }
 }
 
+// Mobile Navigation Bar with Hamburger Icon --------------------
 .navbar-mobile{
   display: none;
 }
@@ -83,27 +85,93 @@
   }
 
   .navbar-mobile{
+    background-color: $color__navigation-body;
     display: block;
 
     .navigation-section {
-      @include navBackground(25px 40px, 2rem);
-      flex-direction: column;
-      justify-content: center;
-      align-items:center;
+      // @include navBackground(25px 40px, 2rem);
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items:center;
+      height: 100%;
     }
   }
 
-  .hamburger-menu-close{
-    display: flex;
-    justify-content: center;
-  }
+  // .hamburger-menu-close{
+  //   display: flex;
+  //   justify-content: center;
+  // }
 
   .links-container {
+    width: 100%;
+    background-color: $color__navigation-body;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    list-style: none;
+    clear: both;
+    width: auto;
+    height: 0px;
+    overflow: hidden;
+    transition: height .4s ease;
+    z-index: 120;
+    transition: all 0.3s ease;
+
+
+
     a {
       @include navLinks(50px 20px, 24px);
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
+  }
+
+  .hamburger {
+    height: 60px;
+    padding: 10px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    position: relative;
+    z-index: 120;
+
+    span {
+      background-color: rgb(61, 61, 61);
+      position: relative;
+      width: 40px;
+      height: 5px;
+      margin-top: 7px;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+  }
+
+  #toggle {
+    display: none;
+  }
+  #toggle:checked + .hamburger .top {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-top: 22.5px;
+
+  }
+
+  #toggle:checked + .hamburger .middle {
+    transform: rotate(45deg);
+    margin-top: -5px;
+  }
+
+  #toggle:checked + .hamburger .bottom {
+    transform: scale(0);
+  }
+
+  #toggle:checked ~ .links-container {
+    height: 700px;
   }
 }
