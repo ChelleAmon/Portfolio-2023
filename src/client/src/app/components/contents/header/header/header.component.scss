@@ -80,14 +80,28 @@
         &:hover, &:focus {
           color: #FFFFFF;
         }
+
+        &:active{
+          color: #495867;
+        }
       }
     }
     .social-media-icons-section {
       @include displayLayout(center, center);
       flex-direction: row;
+      gap: 0.75rem;
 
         .linkedin-icon, .github-icon{
           width: 100%;
+
+          &:hover, &:focus {
+            transform: scale(1.25);
+            transition: all 0.3s ease;
+          }
+
+          &:active {
+            transform: scale(1);
+          }
 
         }
     }
