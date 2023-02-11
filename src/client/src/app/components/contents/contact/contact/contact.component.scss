@@ -63,7 +63,7 @@
       gap: 1.25rem;
       justify-content: center;
 
-      .send-button-block .send-button .reset-button-block .reset-button {
+      .send-button-block .send-button, .reset-button-block .reset-button {
         padding: 15px 60px;
       }
     }
