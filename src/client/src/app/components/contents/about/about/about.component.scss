@@ -77,10 +77,16 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 110%;
+      border-radius: 20px;
       color: $color__button-link;
 
-      &:hover, &:focus {
+      &:hover{
         color: $color__button-link-hover;
+      }
+
+      &:focus{
+        color: $color__button-link;
+        background:  $color__background-button-persianOrange;
       }
     }
   }
