@@ -19,7 +19,7 @@ input[type="submit"] {
   color: $color__button-link;
   border: 1px solid $color__border-button-persianOrange;
 
-  &:hover, &:focus {
+  &:hover, &:focus, &:active {
     background: $color__background-button-hover;
     color: $color__button-link-hover;
     transition: all 0.3s ease-out;
