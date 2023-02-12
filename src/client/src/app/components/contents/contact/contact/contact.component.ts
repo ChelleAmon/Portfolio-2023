@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
+import { validatePhoneNumber } from 'src/shared/phone.validator';
 
 
 @Component({
@@ -33,6 +34,7 @@ export class ContactComponent implements OnInit {
       ],
       phone: [
         '',
+        Validators.compose([validatePhoneNumber()])
       ],
       message: [
         '',
@@ -67,7 +69,6 @@ export class ContactComponent implements OnInit {
         }
       })
     }else {
-      console.log('One of the fields is invalid!')
       this.isSent = false
       this.hasError = true
     }
