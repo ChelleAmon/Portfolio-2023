@@ -1,30 +1,41 @@
-$color__background-body: #ECC8AF;
-$color__background-body-two: #E7AD99;
-$color__navigation-body: #CE796B;
-$color__background-button-persianOrange: #C18C5D;
-$color__background-button-blackCoral: #495867;
-$color__background-button-hover: #FFFFFF;
-$color__background-hr: #495867;
-$color__background-skills_light: #E7AD99;
-$color__background-skills_dark: #495867;
+$color__blackCoral: #495867;
+$color__persianOrange: #C18C5D;
+$color__melon: #E7AD99;
+$color__desertSand: #ECC8AF;
+$color__oldRose: #CE796B;
+$color__white-primary: #FFFFFF;
+$color__white-secondary: #DDDDDD;
+$color__black-primary: #000000;
+$color__black-secondary: #222222;
 
-$color__text-main: #495867;
-$color__text-main-second: #CE796B;
-$color__text-main-third: #FFFFFF;
-$color__text-input: #000;
-$color__text-input-focus: #222;
-$color__text-link: #FFFFFF;
-$color__text-link-hover: #495867;
-$color__button-link: #FFFFFF;
-$color__button-link-hover: #495867;
 
-$color__border-about-section: #C18C5D;
-$color__border-button-persianOrange: #C18C5D;
-$color__border-button-blackCoral: #495867;
+$color__background-body: $color__desertSand;
+$color__background-body-two: $color__melon;
+$color__navigation-body: $color__oldRose;
+$color__background-button-persianOrange: $color__persianOrange;
+$color__background-button-blackCoral: $color__blackCoral;
+$color__background-button-hover: $color__white-primary;
+$color__background-hr: $color__blackCoral;
+$color__background-skills_light: $color__melon;
+$color__background-skills_dark: $color__blackCoral;
 
-$color__border-skills-newyorkpink: #E7AD99;
-$color__border-skills-blackcoral:#495867;
+$color__text-main: $color__blackCoral;
+$color__text-main-second: $color__oldRose;
+$color__text-main-third: $color__white-primary;
+$color__text-input: $color__black-primary;
+$color__text-input-focus: $color__black-secondary;
+$color__text-link: $color__white-primary;
+$color__text-link-hover: $color__blackCoral;
+$color__button-link: $color__white-primary;
+$color__button-link-hover: $color__blackCoral;
 
-$color__background-input-field: #DDDDDD;
-$color__border-input-field:#DDDDDD;
+$color__border-about-section: $color__persianOrange;
+$color__border-button-persianOrange: $color__persianOrange;
+$color__border-button-blackCoral: $color__blackCoral;
+
+$color__border-skills-newyorkpink: $color__melon;
+$color__border-skills-blackcoral:$color__blackCoral;
+
+$color__background-input-field: $color__white-secondary;
+$color__border-input-field:$color__white-secondary;
 

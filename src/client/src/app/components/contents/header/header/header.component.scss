@@ -76,13 +76,18 @@
       a {
         color: #495867;
         font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+        @include link-animation(150%, $color__oldRose, $color__blackCoral);
 
         &:hover, &:focus {
-          color: #FFFFFF;
+          color: $color__white-primary;
+          text-shadow: -1px 1px 0 $color__oldRose,
+                      1px 1px 0 $color__oldRose,
+                      1px -1px 0 $color__oldRose,
+                      -1px -1px 0 $color__oldRose;
         }
 
         &:active{
-          color: #495867;
+          color: $color__blackCoral;
         }
       }
     }
@@ -102,16 +107,12 @@
           &:active {
             transform: scale(1);
           }
-
         }
     }
   }
 }
 
-
 // Mobile Screens : 991.98px and below
-
-
 #header-section {
   @media (max-width: $size__standard-mobile){
     display: flex;
@@ -156,8 +157,15 @@
     order: 5;
 
     .get-in-touch-section {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      a {
+        @include link-animation(125%, $color__oldRose, $color__blackCoral )
+      }
     }
 
     .social-media-icons-section {
