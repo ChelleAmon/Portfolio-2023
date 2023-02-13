@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
 import { validatePhoneNumber } from 'src/shared/phone.validator';
 
@@ -25,20 +25,29 @@ export class ContactComponent implements OnInit {
 
     this.contactForm = this.fb.group({
       name: [
-        '',
-        Validators.compose([Validators.required])
+        '', {
+        validators: Validators.compose([Validators.required]),
+        updateOn: 'blur'
+        }
       ],
       email: [
-        '',
-       Validators.compose([ Validators.required, Validators.email ])
+        '', {
+        validators: Validators.compose([ Validators.required, Validators.email ]),
+        updateOn: 'blur'
+        }
       ],
       phone: [
         '',
-        Validators.compose([validatePhoneNumber()])
+        {
+        validators: [validatePhoneNumber()],
+        updateOn: 'blur'
+        }
       ],
       message: [
-        '',
-       Validators.compose([ Validators.required, Validators.minLength(3)])
+        '', {
+        validators: Validators.compose([ Validators.required, Validators.minLength(3)]),
+        updateOn: 'blur'
+        }
       ]
     })
    }
