@@ -7,8 +7,8 @@
   flex-flow: column nowrap;
   -ms-flex-flow: column nowrap;
   max-width: 1200px;
-  margin: 70px auto 20px;
-  padding: 0 70px;
+  margin: 70px auto 0px;
+  padding: 0 50px;
 
   .contact-title-section {
     display: flex;
@@ -19,12 +19,17 @@
   .form-body-section {
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
+    padding: 0;
     gap: 1rem;
+    width: 100%;
+    justify-content: center;
 
     .email-address-section {
       display: flex;
       flex-direction: row;
+      gap: 1rem;
+      max-width: 1200px;
+      width: 100%;
 
       label {
         font-size: 28px;
@@ -34,15 +39,31 @@
         padding-right: 15px;
       }
 
+      .email-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+
+        .error-alert span {
+          color:red;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 1.5%;
+        }
+      }
       input {
-        width: 1000px;
-        max-width: 100%;
+        width: 900px;
+        max-width: 80%;
       }
     }
 
     .email-body-section {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+
 
       label {
         font-size: 28px;
@@ -52,9 +73,15 @@
       }
 
       textarea{
-        margin-bottom: 15px;
-        width: 1200px;
+        width: 900px;
         max-width: 100%;
+      }
+
+      .error-alert span {
+        color:red;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5%;
       }
     }
     .call-of-action-section{
@@ -93,17 +120,36 @@
         label {
           font-size: 20px;
         }
+
+        .email-input {
+          align-items: center;
+          gap: 0.5rem;
+
+          .error-alert span {
+            font-size: 16px;
+          }
+        }
+        input {
+          max-width: 90%;
+        }
       }
       .email-body-section{
-        gap: 0.5rem;
+        align-items: center;
 
         label {
           font-size: 20px;
           padding: 0;
+          align-self: start;
         }
 
         textarea {
           height: 300px;
+          max-width: 90%;
+        }
+
+        .error-alert span {
+          font-size: 16px;
+          margin: auto;
         }
       }
       .call-of-action-section{
@@ -128,12 +174,22 @@
 // CSS styles for the two confirmaiton templates
 .confirmation-template{
   font-family: 'Playfair Display';
-  line-height: 1.5%;
-  font-size: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
   max-width : 70%;
-  padding: 1.5rem 2rem;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+
+  span {
+    font-size: 20px;
+    padding: max-content;
+
+  }
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 14px;
+    line-height: 170%;
+  }
 }

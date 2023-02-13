@@ -5,19 +5,44 @@
     <div class="form-body-section" [formGroup]="contactForm" >
       <div class="email-address-section">
         <label for="name">Name: </label>
-        <input type="text" name="name" placeholder="Enter your name" formControlName="name">
+        <section class="email-input">
+          <input type="text" name="name" placeholder="Enter your name" formControlName="name">
+          <div class="error-alert" *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)">
+            <span> Please let me know your name :( </span>
+          </div>
+        </section>
       </div>
       <div class="email-address-section">
         <label for="email">Email: </label>
-        <input type="email" name="email" placeholder="Enter your email address" formControlName="email">
+        <section class="email-input">
+          <input type="email" name="email" placeholder="Enter your email address" formControlName="email">
+          <div class="error-alert" *ngIf="contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+            <span> Please let me know your email address :( </span>
+          </div>
+          <div class="error-alert" *ngIf="contactForm.get('email')?.errors?.['email'] && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+            <span> Please re-type with the following format: 'example@example.com'. Thanks! </span>
+          </div>
+        </section>
       </div>
+
       <div class="email-address-section">
         <label for="phone">Phone: </label>
-        <input type="text" name="phone" placeholder="Enter your phone number. No worries, it is optional" formControlName="phone">
+        <section class="email-input">
+          <input type="text" name="phone" placeholder="Enter your phone number. No worries, this is optional" formControlName="phone">
+          <div class="error-alert" *ngIf="contactForm.get('phone')?.errors?.['invalidPhone'] && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched)">
+            <span> Please re-type with the following format: 012-345-6789. Thanks! </span>
+          </div>
+        </section>
       </div>
       <div class="email-body-section">
         <label for="message">Message: </label>
-        <textarea name="message" id="" cols="18" rows="15" placeholder="Enter your message here" formControlName="message"></textarea>
+        <textarea name="message" id="" cols="18" rows="14" placeholder="Enter your message here" formControlName="message"></textarea>
+        <div class="error-alert" *ngIf="contactForm.get('message')?.errors?.['required'] && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)">
+          <span> Please leave me a message :( </span>
+        </div>
+        <div class="error-alert" *ngIf="contactForm.get('message')?.errors?.['minLength'] && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)">
+          <span> The length of your message is too short! </span>
+        </div>
       </div>
       <div class="call-of-action-section">
         <div class="send-button-block">
@@ -29,8 +54,16 @@
       </div>
     </div>
 </div>
-<div class ="confirmation-template" [ngStyle]="isSent == true ? displaySuccessTemplate() : hideTemplate()" >Sent Successfully! Talk to you soon </div>
-<div class ="confirmation-template" [ngStyle]="hasError == true ? displayErrorTemplate() : hideTemplate()" >Sent Failed! Check the required fields and try again </div>
+<div class ="confirmation-template" [ngStyle]="isSent == true ? displaySuccessTemplate() : hideTemplate()" >
+  <span>
+    Sent Successfully! Talk to you soon
+  </span>
+</div>
+<div class ="confirmation-template" [ngStyle]="hasError == true ? displayErrorTemplate() : hideTemplate()" >
+ <span>
+  Sent Failed! Check the required fields and try again
+ </span>
+</div>
 <div class="contact-image-section">
   <img [src]="contact_me_image" alt="">
 </div>
