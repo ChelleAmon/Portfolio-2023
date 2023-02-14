@@ -11,7 +11,7 @@
 #header-section {
   max-width: 1200px;
   width: 100%;
-  margin: 30px auto;
+  margin: 30px auto 0px;
   padding: 0 30px;
   display: grid;
   grid-template-columns: 1.10fr 1fr;
@@ -161,6 +161,7 @@
     margin-top: 25px;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 30px;
     order: 5;
 
     .get-in-touch-section {

@@ -9,7 +9,7 @@
 }
 #skills-section-page {
   max-width: 1200px;
-  margin: 20px auto 60px;
+  margin: 20px auto 0px;
   padding: 0 50px;
   display: flex;
   justify-content: center;
@@ -88,6 +88,9 @@
         transition: all ease-in-out 1s;
         font-weight: bolder;
         scale: 1.25;
+      }
+      &:nth-child(4){
+        margin-bottom: 70px;
       }
     }
   }
