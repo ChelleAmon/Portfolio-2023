@@ -45,7 +45,7 @@
     h1 {
       margin-left: 20px;
       padding-left: 30px;
-      line-height: 64px;
+      line-height: 170%;
       text-shadow: 0px 4px 4px rgba(73, 88, 103, 0.25);
     }
   }
@@ -56,7 +56,7 @@
     h2 {
       margin-left: 20px;
       padding-left: 30px;
-      line-height: 46px;
+      line-height: 170%;
       color: $color__text-main-second;
       text-shadow: 0px 6px 4px rgba(193, 140, 93, 0.25);
     }
@@ -64,7 +64,7 @@
 
   .contact-links-section {
     @include displayLayout(flex-start, center);
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     padding-left: 50px;
 
@@ -123,13 +123,14 @@
 
 
     .header-section-memoji {
-      width: 220px;
+      width: 300px;
       height: 250px;
       order: 1;
     }
 
     .first-phrase-section {
       order: 2;
+      margin-top: 20px;
       p {
        padding: 0;
        margin-left: 0;
@@ -159,6 +160,7 @@
     padding-left: 0;
     margin-top: 25px;
     justify-content: center;
+    flex-direction: column;
     order: 5;
 
     .get-in-touch-section {
