@@ -35,7 +35,7 @@
     justify-content: flex-start;
     flex-shrink: 25%;
     flex-flow: column nowrap;
-    gap: 2rem;
+    gap: 2.5rem;
 
     .frontend-block, .other-tools-block {
       max-width: 500px;
@@ -114,7 +114,7 @@
       }
     }
     .tech-skills-blocks-section {
-      gap: 1.25rem;
+      gap: 2rem;
 
       .frontend-block, .other-tools-block, .backend-block, .learning-block {
         padding: 15px 25px;
