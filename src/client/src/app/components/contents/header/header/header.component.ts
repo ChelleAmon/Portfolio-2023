@@ -21,6 +21,11 @@ export class HeaderComponent implements OnInit {
     rel: "noopener noreferrer"
   }
 
+  socialMedia_details = [
+    { name: "Portfolio- LinkedIn", website: "https://www.linkedin.com/in/gichelle-amon/", icon: "../../../../../assets/uploads/LinkedIn.png"},
+    { name: "Portfolio- Github", website: "https://github.com/ChelleAmon", icon: "../../../../../assets/uploads/GitHub.png" },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
