@@ -17,15 +17,12 @@
         <a [routerLink]="['../contact']"> Let's get in touch</a>
       </div>
       <div class="social-media-icons-section">
-        <div class="linkedin-icon">
-          <a href="https://www.linkedin.com/in/gichelle-amon/" [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel> <img src="../../../../../assets/uploads/LinkedIn.png" alt="Portfolio-LinkedIn"></a>
-        </div>
-        <div class="github-icon">
-          <a href="https://github.com/ChelleAmon" [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel> <img src="../../../../../assets/uploads/GitHub.png" alt="Portfolio-Github"></a>
+        <div class="sm-icon" *ngFor="let socmed of socialMedia_details">
+          <a [href]=socmed.website [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel>
+            <img [src]=socmed.icon [alt]=socmed.name>
+          </a>
         </div>
       </div>
     </div>
   </header>
-
-
 </div>
