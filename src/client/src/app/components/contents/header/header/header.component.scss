@@ -64,14 +64,14 @@
 
   .contact-links-section {
     @include displayLayout(flex-start, center);
-    flex-direction: row;
+    flex-direction: column;
     gap: 1rem;
     padding-left: 50px;
 
     .get-in-touch-section {
       font-weight: 600;
       font-size: 24px;
-      line-height: 30px;
+      line-height: 125%;
 
       a {
         color: #495867;
@@ -96,7 +96,7 @@
       flex-direction: row;
       gap: 0.75rem;
 
-        .linkedin-icon, .github-icon{
+        .sm-icon{
           width: 100%;
 
           &:hover, &:focus {
@@ -119,6 +119,7 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+    line-height: 100%;
 
 
     .header-section-memoji {
@@ -131,6 +132,7 @@
       order: 2;
       p {
        padding: 0;
+       margin-left: 0;
       }
     }
 
@@ -139,6 +141,7 @@
       order: 3;
       h1 {
         padding-left: 0;
+        margin-left: 0;
       }
     }
 
@@ -147,11 +150,13 @@
 
     h2 {
       padding-left: 0;
+      margin-left: 0;
       line-height: 100%;
+      text-align: center;
     }
   }
   .contact-links-section {
-    padding-left: 20px;
+    padding-left: 0;
     margin-top: 25px;
     justify-content: center;
     order: 5;
@@ -171,9 +176,6 @@
     .social-media-icons-section {
       flex-direction: row;
       width: 75%;
-        // .linkedin-icon, .github-icon{
-
-        // }
     }
   }
   }
