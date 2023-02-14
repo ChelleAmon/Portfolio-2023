@@ -55,6 +55,16 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayTemplateStyle(bgColor: string, borderColor: string, fontColor: string) {
+    return {
+    'background': bgColor,
+    'border': `2px solid ${borderColor}`,
+    'color': fontColor,
+    'opacity': '1',
+    'transition': 'opacity 1s ease-out'
+    }
+  }
+
   sendEmail(){
     if (this.contactForm.valid){
       let contactUs = {
@@ -88,19 +98,11 @@ export class ContactComponent implements OnInit {
   }
 
  displaySuccessTemplate() {
-
     setTimeout(()=>{
       this.isSent = false;
     }, 5000);
 
-    return {
-      'background': '#FFFFFF',
-      'border': '2px solid #27672D',
-      'color': '#27672D',
-      'opacity': '1',
-      'transition': 'all 1s ease-out'
-    }
-
+    return this.displayTemplateStyle('#FFFFFF', '#27672D', '#27672D')
   }
 
   displayErrorTemplate(){
@@ -108,15 +110,9 @@ export class ContactComponent implements OnInit {
       this.hasError = false;
     }, 3000);
 
-    return {
-      'background': '#FFFFFF',
-      'border': '2px solid #AC1818',
-      'color': '#AC1818',
-      'opacity': '1',
-      'transition': 'all 1s ease-out'
-    }
+    const errorTemplate = this.displayTemplateStyle('#FFFFFF', '#AC1818', '#AC1818')
+    return errorTemplate;
   }
-
 
   hideTemplate(){
     return this.hiddenTemplateStyle;
