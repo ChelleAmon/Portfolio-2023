@@ -56,7 +56,13 @@
       height: 100%;
 
       &-link{
-       @include navLinks(30px 20px 40px, 20px)
+       @include navLinks(30px 20px 40px, 20px);
+        &:nth-child(1){
+          margin-top: 120px;
+        }
+        &:last-child{
+          margin-bottom: 120px;
+        }
       }
 
       .links-container {
@@ -129,7 +135,7 @@
       }
 
       #toggle:checked ~ .links-container {
-        height: 100vh;
+        height: 95vh;
         max-height: 100%;
       }
     }
