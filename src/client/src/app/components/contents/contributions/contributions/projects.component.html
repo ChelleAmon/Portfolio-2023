@@ -23,8 +23,15 @@
       <p>Technologies: {{contribution.technologies}}</p>
     </section>
     <section class="demo-section">
-      <button class="button_persian-orange">Live Demo</button>
-      <button class="button_black-coral">Source Code</button>
+      <a
+        [href]=contribution.link
+        [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel
+        class="button_persian-orange"
+        [ngStyle]="{'display' : (contribution.websiteAvailable || contribution.demoAvailable) ? 'block' : 'none'}"
+      >
+        {{ (contribution.websiteAvailable && !contribution.demoAvailable) ? "View Website" : "View Demo" }}
+      </a>
+      <!-- <button class="button_black-coral">Source Code</button> -->
     </section>
   </div>
   </div>

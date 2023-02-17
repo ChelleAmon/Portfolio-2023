@@ -20,7 +20,7 @@
   .project-blocks-section {
     display: flex;
     flex-wrap: row nowrap;
-    gap: 4rem;
+    gap: 3.5rem;
     padding: 30px 20px;
 
     .project-block {
@@ -30,7 +30,8 @@
       background: #FFFFFF;
       box-shadow: 7px 4px 4px 6px rgba(73, 88, 103, 0.25), 15px 6px 4px 6px rgba(193, 140, 93, 0.25), 20px 10px 4px 6px rgba(206, 121, 107, 0.25);
       border-radius: 50px 0px;
-      padding: 25px 30px;
+      padding: 30px 23px;
+      width: 80%;
       animation-delay: -1s;
       animation-duration: 6s;
       animation-fill-mode: none;
@@ -45,6 +46,9 @@
       .title-section{
         display: flex;
         justify-content: center;
+        h5 {
+          text-align: center;
+        }
       }
       .image-section {
         display: flex;
@@ -72,7 +76,8 @@
       }
       .demo-section {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-self: center;
         gap: 1rem;
       }
     }
