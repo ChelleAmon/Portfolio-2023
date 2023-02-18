@@ -3,39 +3,49 @@
     <h3 class="projects-title">Contributions</h3>
   </div>
   <div class="project-blocks-section">
-
-  <div class="project-block" *ngFor="let contribution of contributions">
-    <section class="title-section">
-      <h5 class="title">{{contribution.name}}</h5>
-    </section>
-    <section class="image-section">
-      <img
-        [src]=contribution.imgUrl
-        [alt]=contribution.imgAlt
-        width="335"
-        height="215"
-      />
-    </section>
-    <section class="description">
-      <p>{{contribution.description}}</p>
-    </section>
-    <section class="technologies">
-      <p>Technologies: {{contribution.technologies}}</p>
-    </section>
-    <section class="demo-section">
-      <a
-        [href]=contribution.link
-        [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel
-        class="button_persian-orange"
-        [ngStyle]="{'display' : (contribution.websiteAvailable || contribution.demoAvailable) ? 'block' : 'none'}"
-      >
-        {{ (contribution.websiteAvailable && !contribution.demoAvailable) ? "View Website" : "View Demo" }}
-      </a>
-      <!-- <button class="button_black-coral">Source Code</button> -->
-    </section>
-  </div>
+    <div class="project-block" *ngFor="let contribution of contributions">
+      <section class="title-section">
+        <h5 class="title">{{contribution.name}}</h5>
+      </section>
+      <section class="image-section">
+        <img
+          [src]=contribution.imgUrl
+          [alt]=contribution.imgAlt
+          width="335"
+          height="215"
+        />
+      </section>
+      <section class="description">
+        <p>{{contribution.description}}</p>
+      </section>
+      <section class="technologies">
+        <p>Technologies: {{contribution.technologies}}</p>
+      </section>
+      <section class="demo-section">
+        <a
+          [href]=contribution.link
+          [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel
+          class="button_persian-orange"
+          [ngStyle]="{'display' : (contribution.websiteAvailable || contribution.demoAvailable) ? 'block' : 'none'}"
+        >
+          {{ (contribution.websiteAvailable && !contribution.demoAvailable) ? "View Website" : "View Demo" }}
+        </a>
+        <!-- <button class="button_black-coral">Source Code</button> -->
+      </section>
+    </div>
   </div>
   <div class="my-image-section">
     <img [src]="imgUrl" alt="Project Image ID" />
+  </div>
+  <div class="portfolio-detail-section">
+    <h5>Check out this website's source code!</h5>
+    <div class="links-section-container" *ngFor="let link of portfolio_links">
+      <div class="link-section">
+        <a [href]="link.url" [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel>
+          <img [src]="link.img_src" [alt]="link.name">
+          <p> {{link.description}} </p>
+        </a>
+      </div>
+    </div>
   </div>
 </div>

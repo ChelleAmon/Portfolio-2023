@@ -49,6 +49,22 @@ export class ProjectsComponent implements OnInit {
     },
   ];
 
+
+  portfolio_links = [
+    {
+      name: 'Github',
+      url: 'https://github.com/ChelleAmon/Portfolio-2023',
+      img_src: '../../../../../assets/uploads/GitHub2.png',
+      description: 'Code and documentation'
+    },
+    {
+      name: "Figma",
+      url: 'https://www.figma.com/file/hfZAi64Mkgfm3z7kyNvzCS/Final-Portfolio-2023?node-id=0%3A1&t=u6tjk1QR7zuEw0HC-0',
+      img_src: '../../../../../assets/uploads/Figma.png',
+      description: 'Design prototype'
+    }
+  ]
+
   constructor() {}
 
   ngOnInit(): void {}
