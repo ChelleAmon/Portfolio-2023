@@ -3,11 +3,15 @@
 @mixin navBackground($padding, $gap){
   background: $color__navigation-body;
   padding: $padding;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: $gap;
 }
 
 @mixin navLinks($padding, $fontsize){
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: $padding;
   font-size: $fontsize;
@@ -28,9 +32,16 @@
 
   .navigation-section {
     @include navBackground(25px 40px, 1.5rem);
-    flex-direction: row;
-    justify-content: center;
-    align-items:center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
 
     &-link {
       @include navLinks(0 20px, 24px);
@@ -69,24 +80,44 @@
         width: 100%;
         background-color: $color__navigation-body;
         margin: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding: 0;
         list-style: none;
         clear: both;
         width: auto;
         height: 0px;
         overflow: hidden;
+        -webkit-transition: height .4s ease;
+        -o-transition: height .4s ease;
         transition: height .4s ease;
         z-index: 10;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
 
         a {
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
         }
       }
 
@@ -95,6 +126,7 @@
         padding: 20px;
         display: -ms-grid;
         display: grid;
+
         grid-template-rows: repeat(3, 1fr);
         justify-items: center;
         position: relative;
@@ -106,6 +138,8 @@
           width: 40px;
           height: 5px;
           margin-top: 7px;
+          -webkit-transition: all 0.1s ease-in-out;
+          -o-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out;
           cursor: pointer;
           border-radius: 30px;
@@ -118,20 +152,23 @@
 
       #toggle:checked + .hamburger .top {
         -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
         margin-top: 22.5px;
 
       }
 
       #toggle:checked + .hamburger .middle {
         -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
         margin-top: -5px;
       }
 
       #toggle:checked + .hamburger .bottom {
         -webkit-transform: scale(0);
-        transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
       }
 
       #toggle:checked ~ .links-container {
