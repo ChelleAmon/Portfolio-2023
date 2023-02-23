@@ -16,6 +16,8 @@ export class AboutComponent implements OnInit {
   }
 
   openModal(){
-    this.modalRef = this.modalService.open(ModalComponent)
+    this.modalRef = this.modalService.open(ModalComponent, {
+      modalClass: 'modal-lg'
+    })
   }
 }
