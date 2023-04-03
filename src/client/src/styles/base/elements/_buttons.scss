@@ -1,0 +1,95 @@
+@import '../../variables/colors';
+@import '../../variables/structure';
+
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@mixin buttonProperties() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-style: normal;
+  padding: 10px 20px;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @include buttonProperties();
+  background: $color__background-button-persianOrange;
+  color: $color__button-link;
+  border: 1px solid $color__border-button-persianOrange;
+
+  &:hover, &:focus, &:active {
+    background: $color__background-button-hover;
+    color: $color__button-link-hover;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+}
+
+.button_persian-orange {
+  @include buttonProperties();
+  border: 2px solid $color__border-button-persianOrange;
+  border-radius: 20px;
+  background: $color__background-button-persianOrange;
+  color: $color__button-link;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 18px;
+  }
+
+  &:hover, &:focus {
+    background: $color__background-button-hover;
+    color: $color__button-link-hover;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+}
+
+.button_black-coral {
+  @include buttonProperties();
+  border: 2px solid $color__border-button-blackCoral;
+  border-radius: 20px;
+  background: $color__background-button-blackCoral;
+  color: $color__button-link;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 18px;
+  }
+
+  &:hover, &:focus {
+    background: $color__background-button-hover;
+    color: $color__button-link-hover;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+}
+
+

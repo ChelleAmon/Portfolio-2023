@@ -1,0 +1,268 @@
+@import '../../../../../styles';
+
+// Desktop and wide screen displays
+
+#contact-form-section-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  max-width: 950px;
+  margin: 70px auto 20px;
+  padding: 0 50px;
+
+  .contact-title-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-bottom: 40px;
+  }
+
+  .form-body-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    gap: 1rem;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    .email-address-section {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      gap: 1rem;
+      max-width: 1200px;
+      width: 100%;
+
+      label {
+        font-size: 28px;
+        color: $color__text-main;
+        font-family: 'Playfair Display', serif;
+        line-height: 110%;
+        padding-right: 15px;
+      }
+
+      .email-input {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        width: 100%;
+        gap: 0.5rem;
+
+        .error-alert span {
+          color:red;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 1.5%;
+        }
+      }
+    }
+
+    .email-body-section {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      gap: 0.5rem;
+
+
+      label {
+        font-size: 28px;
+        color: $color__text-main;
+        font-family: 'Playfair Display', serif;
+        padding: 10px 0 20px ;
+      }
+
+      textarea{
+        width: 900px;
+        max-width: 100%;
+      }
+
+      .error-alert span {
+        color:red;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5%;
+      }
+    }
+    .call-of-action-section{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      gap: 1.25rem;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      margin-top: 20px;
+
+      .send-button-block .send-button, .reset-button-block .reset-button {
+        padding: 15px 60px;
+      }
+    }
+  }
+}
+.contact-image-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -50px;
+}
+
+
+//Mobile Screens (max-width: 991.98px)
+
+@media (max-width: $size__standard-mobile) {
+  #contact-form-section-page {
+    padding: 0 30px;
+
+    .contact-title-section{
+      text-align: center;
+    }
+
+    .form-body-section{
+      .email-address-section{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        gap: 0.5rem;
+
+        label {
+          font-size: 20px;
+          padding: 0px;
+          margin: 0 1.5em;
+        }
+
+        .email-input {
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          gap: 0.5rem;
+
+          .error-alert span {
+            font-size: 16px;
+          }
+        }
+        input {
+          width: 900px;
+          max-width: 90%;
+        }
+      }
+      .email-body-section{
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+
+        label {
+          font-size: 20px;
+          padding: 0;
+          margin: 0 1.5em;
+          -ms-flex-item-align: start;
+              -ms-grid-row-align: start;
+              align-self: start;
+        }
+
+        textarea {
+          height: 300px;
+          max-width: 90%;
+        }
+
+        .error-alert span {
+          font-size: 16px;
+          margin: auto;
+        }
+      }
+      .call-of-action-section{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+
+        .send-button-block .send-button .reset-button-block .reset-button {
+          width: 200px;
+          max-width: 90%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+        }
+      }
+    }
+  }
+  .contact-image-section{
+    padding: 0 50px;
+  }
+}
+
+
+// CSS styles for the two confirmation templates
+.confirmation-template{
+  font-family: 'Playfair Display';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  max-width: 70%;
+  padding: 15px 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+  span {
+    font-size: 20px;
+    padding: max-content;
+
+  }
+
+  @media (max-width: $size__standard-mobile) {
+    font-size: 14px;
+    line-height: 170%;
+  }
+}

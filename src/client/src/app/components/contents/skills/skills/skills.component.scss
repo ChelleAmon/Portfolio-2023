@@ -1,0 +1,187 @@
+@import '../../../../../styles';
+
+// Desktop and Wide Screen Responsiveness
+.skills-title-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px auto;
+}
+#skills-section-page {
+  max-width: 1200px;
+  margin: 20px auto 0px;
+  padding: 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  width: 100%;
+  height: auto;
+
+  .memoji-section{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+
+    img {
+      max-width: 90%;
+    }
+  }
+
+  .tech-skills-blocks-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-negative: 25%;
+        flex-shrink: 25%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    gap: 2.5rem;
+
+    .frontend-block, .other-tools-block {
+      max-width: 500px;
+      padding: 20px 40px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+
+    .backend-block, .learning-block {
+      max-width: 500px;
+      padding: 20px 40px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+
+      h5, p {
+        color: $color__text-main-third;
+      }
+    }
+
+    .lighter-skill-block {
+      background: $color__background-skills_light;
+      -webkit-filter: drop-shadow(10px 10px 9px rgba(206, 121, 107, 0.25));
+              filter: drop-shadow(10px 10px 9px rgba(206, 121, 107, 0.25));
+      border: 1px solid $color__border-skills-newyorkpink;
+      border-radius: 30px;
+
+      &:hover {
+        background: rgb(236,200,175);
+        background: -o-radial-gradient(circle, rgba(236,200,175,0.36738445378151263) 26%, rgba(231,173,153,1) 73%, rgba(73,88,103,1) 100%);
+        background: radial-gradient(circle, rgba(236,200,175,0.36738445378151263) 26%, rgba(231,173,153,1) 73%, rgba(73,88,103,1) 100%);
+        -webkit-transition: all ease-in-out 1s;
+        -o-transition: all ease-in-out 1s;
+        transition: all ease-in-out 1s;
+        font-weight: bolder;
+        scale: 1.25;
+
+      }
+    }
+
+    .darker-skill-block {
+      background: $color__background-skills_dark;
+      -webkit-filter: drop-shadow(10px 10px 9px rgba(73, 88, 103, 0.25));
+              filter: drop-shadow(10px 10px 9px rgba(73, 88, 103, 0.25));
+      border: 1px solid $color__border-skills-blackcoral;
+      border-radius: 30px;
+
+      &:hover {
+        border: 1px solid $color__border-skills-newyorkpink;
+        background: rgb(73,88,103);
+        background: -o-radial-gradient(circle, rgba(73,88,103,1) 26%, rgba(231,173,153,1) 83%, rgba(236,200,175,0.36738445378151263) 100%);
+        background: radial-gradient(circle, rgba(73,88,103,1) 26%, rgba(231,173,153,1) 83%, rgba(236,200,175,0.36738445378151263) 100%);
+        -webkit-transition: all ease-in-out 1s;
+        -o-transition: all ease-in-out 1s;
+        transition: all ease-in-out 1s;
+        font-weight: bolder;
+        scale: 1.25;
+      }
+      &:nth-child(4){
+        margin-bottom: 70px;
+      }
+    }
+  }
+}
+
+
+// Mobile: Max screen size- 991.98px
+
+@media (max-width: $size__standard-mobile) {
+  .skills-title-section {
+    margin-bottom: 20px;
+  }
+
+  #skills-section-page {
+    padding: 0 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    gap: 0.5rem;
+
+    .memoji-section{
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      img {
+        max-width: 80%;
+      }
+    }
+    .tech-skills-blocks-section {
+      gap: 2rem;
+
+      .frontend-block, .other-tools-block, .backend-block, .learning-block {
+        padding: 15px 25px;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+        width: 80%;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<!-- Desktop Version: Start-->
+<div class="navbar-desktop">
+  <nav class="navigation-section">
+    <ng-container *ngFor="let navItem of navigationItems">
+      <a [routerLink]="navItem | lowercase" class="navigation-section-link">{{ navItem }}</a>
+    </ng-container>
+  </nav>
+</div>
+
+<!-- Desktop version: End -->
+
+<!-- Mobile version: Start -->
+<div class="navbar-mobile">
+  <nav class="navigation-section">
+        <input type="checkbox" id="toggle" #toggleMenu>
+        <label for="toggle" class="hamburger">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </label>
+      <nav class="links-container">
+        <ng-container>
+          <a  *ngFor="let navItem of navigationItems" [routerLink]="navItem | lowercase" class="navigation-section-link" (click)="getNavLinkClickState()">
+            {{ navItem }}</a>
+        </ng-container>
+      </nav>
+  </nav>
+</div>
+
+<!-- Mobile Version: End -->
+
+

@@ -1,0 +1,28 @@
+<div class="-header-section-banner">
+  <header id="header-section">
+    <div class="first-phrase-section">
+      <p>Hello! I am</p>
+    </div>
+    <div class="header-section-memoji">
+      <img [src]=profileProps.src [alt]=profileProps.alt class="memoji-block">
+    </div>
+    <div class="name-title-section">
+      <h1> {{headerContents.name}} </h1>
+    </div>
+    <div class="job-title-section">
+      <h2> {{headerContents.job}} </h2>
+    </div>
+    <div class="contact-links-section">
+      <div class="get-in-touch-section">
+        <a [routerLink]="['../contact']"> Let's get in touch</a>
+      </div>
+      <div class="social-media-icons-section">
+        <div class="sm-icon" *ngFor="let socmed of socialMedia_details">
+          <a [href]=socmed.website [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel>
+            <img [src]=socmed.icon [alt]=socmed.name>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
