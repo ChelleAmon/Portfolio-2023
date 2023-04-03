@@ -13,7 +13,7 @@ const routes: Routes = [
       {path: 'home', component: HeaderComponent},
       {path: 'about', component: AboutComponent},
       {path: 'skills', component: SkillsComponent},
-      {path: 'projects', component: ProjectsComponent},
+      {path: 'contributions', component: ProjectsComponent},
       {path: 'contact', component: ContactComponent},
     ]
   },
@@ -21,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: "enabled" })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -3,80 +3,49 @@
     <h3 class="projects-title">Contributions</h3>
   </div>
   <div class="project-blocks-section">
-
-    <!-- Project Blocks are static for now : START -->
-    <div class="project-block">
+    <div class="project-block" *ngFor="let contribution of contributions">
       <section class="title-section">
-        <h5 class="title">The Elementals</h5>
+        <h5 class="title">{{contribution.name}}</h5>
       </section>
       <section class="image-section">
-        <img src="../../../../../assets/uploads/rockpaperscissors.jpg" alt="The Elementals-Rock Paper Scissors" width="335" height="215">
+        <img
+          [src]=contribution.imgUrl
+          [alt]=contribution.imgAlt
+          width="335"
+          height="215"
+        />
       </section>
       <section class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p>{{contribution.description}}</p>
       </section>
       <section class="technologies">
-        <p>Technologies: MEAN Stack, CSS, Heroku </p>
+        <p>Technologies: {{contribution.technologies}}</p>
       </section>
       <section class="demo-section">
-        <button class="button_persian-orange">Live Demo</button>
-        <button class="button_black-coral">Source Code</button>
+        <a
+          [href]=contribution.link
+          [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel
+          class="button_persian-orange"
+          [ngStyle]="{'display' : (contribution.websiteAvailable || contribution.demoAvailable) ? 'block' : 'none'}"
+        >
+          {{ (contribution.websiteAvailable && !contribution.demoAvailable) ? "View Website" : "View Demo" }}
+        </a>
+        <!-- <button class="button_black-coral">Source Code</button> -->
       </section>
     </div>
-
-    <div class="project-block hide-second-block">
-      <section class="title-section">
-        <h5 class="title">The Elementals</h5>
-      </section>
-      <section class="image-section">
-        <img src="../../../../../assets/uploads/rockpaperscissors.jpg" alt="The Elementals-Rock Paper Scissors" width="335" height="215">
-      </section>
-      <section class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </section>
-      <section class="technologies">
-        <p>Technologies: MEAN Stack, CSS, Heroku </p>
-      </section>
-      <section class="demo-section">
-        <button class="button_persian-orange">Live Demo</button>
-        <button class="button_black-coral">Source Code</button>
-      </section>
-    </div>
-
-    <div class="project-block hide-third-block">
-      <section class="title-section">
-        <h5 class="title">The Elementals</h5>
-      </section>
-      <section class="image-section">
-        <img src="../../../../../assets/uploads/rockpaperscissors.jpg" alt="The Elementals-Rock Paper Scissors">
-      </section>
-      <section class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </section>
-      <section class="technologies">
-        <p>Technologies: MEAN Stack, CSS, Heroku </p>
-      </section>
-      <section class="demo-section">
-        <button class="button_persian-orange">Live Demo</button>
-        <button class="button_black-coral">Source Code</button>
-      </section>
-    </div>
-
-      <!-- Project Blocks are static for now : END -->
   </div>
   <div class="my-image-section">
-    <img src="../../../../../assets/uploads/projects-id.png" alt="Project Image ID">
+    <img [src]="imgUrl" alt="Project Image ID" />
+  </div>
+  <div class="portfolio-detail-section">
+    <h5>Check out this website's source code!</h5>
+    <div class="links-section-container" *ngFor="let link of portfolio_links">
+      <div class="link-section">
+        <a [href]="link.url" [target]=socialMediaAnchorProps.target [rel]=socialMediaAnchorProps.rel>
+          <img [src]="link.img_src" [alt]="link.name">
+          <p> {{link.description}} </p>
+        </a>
+      </div>
+    </div>
   </div>
 </div>

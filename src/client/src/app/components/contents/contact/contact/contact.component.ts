@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
+import { validatePhoneNumber } from 'src/shared/phone.validator';
 
 
 @Component({
@@ -15,28 +16,53 @@ export class ContactComponent implements OnInit {
   isSent: Boolean = false
   hasError: Boolean = false
 
+  hiddenTemplateStyle = {
+    'opacity': '0',
+    'transition' : 'all 2s ease-out'
+  }
+
   constructor(private fb: FormBuilder, private contactusService: ContactusService) {
 
     this.contactForm = this.fb.group({
       name: [
-        '',
-        Validators.compose([Validators.required])
+        '', {
+        validators: Validators.compose([Validators.required]),
+        updateOn: 'blur'
+        }
       ],
       email: [
-        '',
-       Validators.compose([ Validators.required, Validators.email ])
+        '', {
+        validators: Validators.compose([ Validators.required, Validators.email ]),
+        updateOn: 'blur'
+        }
       ],
       phone: [
         '',
+        {
+        validators: [validatePhoneNumber()],
+        updateOn: 'blur'
+        }
       ],
       message: [
-        '',
-       Validators.compose([ Validators.required, Validators.minLength(3)])
+        '', {
+        validators: Validators.compose([ Validators.required, Validators.minLength(3)]),
+        updateOn: 'blur'
+        }
       ]
     })
    }
 
   ngOnInit(): void {
+  }
+
+  displayTemplateStyle(bgColor: string, borderColor: string, fontColor: string) {
+    return {
+    'background': bgColor,
+    'border': `2px solid ${borderColor}`,
+    'color': fontColor,
+    'opacity': '1',
+    'transition': 'opacity 1s ease-out'
+    }
   }
 
   sendEmail(){
@@ -54,7 +80,6 @@ export class ContactComponent implements OnInit {
           this.isSent = true
         },
         error: (err) => {
-          console.log("Errorzzzzz: ", err )
           this.isSent = false
           this.hasError = true
         },
@@ -63,7 +88,6 @@ export class ContactComponent implements OnInit {
         }
       })
     }else {
-      console.log('One of the fields is invalid!')
       this.isSent = false
       this.hasError = true
     }
@@ -73,45 +97,25 @@ export class ContactComponent implements OnInit {
     this.contactForm.reset();
   }
 
-  displaySuccessTemplate() {
-    return {
-      'background': '#FFFFFF',
-      'border': '2px solid #27672D',
-      'font-family': 'Playfair Display',
-      'line-height': '1.5%',
-      'font-size': '1.25rem',
-      'color': '#27672D',
-      'display': 'flex',
-      'justify-content': 'center',
-      'align-items': 'center',
-      'margin': 'auto',
-      'max-width' : '70%',
-      "padding": '1.5rem 2rem',
-    }
+ displaySuccessTemplate() {
+    setTimeout(()=>{
+      this.isSent = false;
+    }, 5000);
+
+    return this.displayTemplateStyle('#FFFFFF', '#27672D', '#27672D')
   }
 
   displayErrorTemplate(){
-    return {
-      'background': '#FFFFFF',
-      'border': '2px solid #AC1818',
-      'font-family': 'Playfair Display',
-      'line-height': '1.5%',
-      'font-size': '1.25rem',
-      'color': '#AC1818',
-      'display': 'flex',
-      'justify-content': 'center',
-      'align-items': 'center',
-      'margin': 'auto',
-      'max-width' : '70%',
-      "padding": '1.5rem 2rem',
-    }
+    setTimeout(()=>{
+      this.hasError = false;
+    }, 3000);
+
+    const errorTemplate = this.displayTemplateStyle('#FFFFFF', '#AC1818', '#AC1818')
+    return errorTemplate;
   }
 
-
   hideTemplate(){
-    return {
-      'display': 'none'
-    }
+    return this.hiddenTemplateStyle;
   }
 }
 

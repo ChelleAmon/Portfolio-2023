@@ -1,5 +1,49 @@
 @import '../../variables/colors';
 
+@mixin link-animation($top: 150%, $bg-before: #FFF, $bg-after: #ECC8AF) {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: $bg-before;
+    position: absolute;
+    top: $top;
+    left: 0;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: $bg-after;
+    position: absolute;
+    top: $top;
+    right: 0;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  &:hover:before {
+    width: 50%;
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+
+  &:hover:after {
+    width: 50%;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
 a {
   color: $color__text-link;
   text-decoration: none;

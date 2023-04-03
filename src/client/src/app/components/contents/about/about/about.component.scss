@@ -1,28 +1,81 @@
 @import '../../../../../styles';
 
+:root {
+  --angle: 45deg;
+  --opacity: 0.5;
+}
 // Desktop responsiveness
 
 #about-me-page {
   max-width: 900px;
-  margin: 100px auto;
+  margin: 70px auto 30px;
   padding: 0 30px;
+  border-radius: 100px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column nowrap;
   -ms-flex-flow: column nowrap;
-  border: 3px solid $color__border-about-section;
-  border-radius: 100px 0px;
+  border-top-left-radius: 150px 150px;
+  --border-size: 0.3rem;
+  border: var(--border-size) solid transparent;
+  background: rgba( 255, 255, 255, 0.1 );
+  background: -o-linear-gradient(
+    274deg,
+    rgba(243, 243, 243, 0.367) 17%,
+    rgba(231,173,153,1) 52%,
+     rgba(45,228,254,1) 100%),
+  conic-gradient(
+    from var(--angle),
+    #CF9490 0deg 90deg,
+    #D3B970 90deg 180deg,
+    #92ccad 180deg 270deg,
+    #2DE4FE 270deg 360deg
+  );
+  background: linear-gradient(
+    176deg,
+    rgba(243, 243, 243, 0.367) 17%,
+    rgba(231,173,153,1) 52%,
+     rgba(45,228,254,1) 100%),
+  conic-gradient(
+    from var(--angle),
+    #CF9490 0deg 90deg,
+    #D3B970 90deg 180deg,
+    #92ccad 180deg 270deg,
+    #2DE4FE 270deg 360deg
+  );
+  -webkit-backdrop-filter: blur( 20px );
+  -webkit-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.45 );
+          box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.45 );
+  backdrop-filter: blur( 20px );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  -webkit-animation: rotate 12s linear infinite, opacityChange 6s infinite alternate;
+          animation: rotate 12s linear infinite, opacityChange 6s infinite alternate;
 
 
   .about-me-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 50px 20px;
   }
 
   .id-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 10px auto;
   }
 
@@ -52,16 +105,26 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 110%;
+      border-radius: 20px;
       color: $color__button-link;
 
-      &:hover, &:focus {
+      &:hover{
         color: $color__button-link-hover;
+      }
+
+      &:focus{
+        color: $color__button-link;
+        background:  $color__background-button-persianOrange;
       }
     }
   }
   .images-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content:space-between;
+    -webkit-box-pack:justify;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
 
     .garfield-image-section {
       position: relative;
@@ -88,7 +151,7 @@
   #about-me-page {
     margin-left: 30px;
     margin-right: 30px;
-    padding: 0 18px;
+    padding: 0 20px;
 
     .first-body-section, .second-body-section {
       margin-left: 20px;
@@ -108,8 +171,12 @@
       }
     }
     .images-section {
-      justify-content: center;
-      align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
 
       .garfield-image-section {
         margin-top: 30px;
@@ -126,3 +193,44 @@
       }
   }
 }
+
+
+@supports (background: paint(houdini)){
+  @property --opacity {
+    syntax: "<number>";
+    initial-value: 0.5;
+    inherits: false;
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+}
+
+@-webkit-keyframes opacityChange {
+  to {
+    --opacity: 1;
+  }
+}
+
+@keyframes opacityChange {
+  to {
+    --opacity: 1;
+  }
+}
+
+@-webkit-keyframes rotate
+ {
+  to {
+    --angle: 360deg;
+  }
+ }
+
+@keyframes rotate
+ {
+  to {
+    --angle: 360deg;
+  }
+ }

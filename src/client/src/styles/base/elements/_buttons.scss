@@ -2,9 +2,20 @@
 @import '../../variables/structure';
 
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @mixin buttonProperties() {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   font-style: normal;
   padding: 10px 20px;
@@ -19,9 +30,11 @@ input[type="submit"] {
   color: $color__button-link;
   border: 1px solid $color__border-button-persianOrange;
 
-  &:hover, &:focus {
+  &:hover, &:focus, &:active {
     background: $color__background-button-hover;
     color: $color__button-link-hover;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
   }
 }
@@ -35,6 +48,9 @@ input[type="submit"] {
   font-size: 20px;
   font-weight: 600;
   font-family: 'Playfair Display', serif;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 
 
   @media (max-width: $size__standard-mobile) {
@@ -44,6 +60,8 @@ input[type="submit"] {
   &:hover, &:focus {
     background: $color__background-button-hover;
     color: $color__button-link-hover;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
   }
 }
@@ -57,6 +75,9 @@ input[type="submit"] {
   font-size: 20px;
   font-weight: 600;
   font-family: 'Playfair Display', serif;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 
   @media (max-width: $size__standard-mobile) {
     font-size: 18px;
@@ -65,6 +86,8 @@ input[type="submit"] {
   &:hover, &:focus {
     background: $color__background-button-hover;
     color: $color__button-link-hover;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
   }
 }
