@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
 
-  baseUrl: string = !environment.production ? 'http://localhost:5001/portfolio-2023-6bd0c/us-central1/' : '/api/';
+  baseUrl: string = !environment.production ? 'http://localhost:5001/portfolio-2023-6bd0c/us-central1/' : '';
 
   constructor(private http: HttpClient) { }
 
