@@ -1,5 +1,8 @@
 const functions = require("firebase-functions");
 const nodemailer = require('nodemailer');
+const admin = require('firebase-admin');
+
+admin.initializeApp()
 
 let { useremail, refreshtoken, clientid, clientsecret } = functions.config().gmail;
 
