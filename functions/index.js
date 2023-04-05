@@ -26,7 +26,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-exports.sendEmail = functions.https.onRequest((req,res) => {
+exports.sendEmailOverHTTP = functions.https.onRequest((req,res) => {
       //for testing purposes
   console.log(
     'from sendEmail function. The request object is:',
