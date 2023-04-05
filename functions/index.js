@@ -8,7 +8,7 @@ let { useremail, refreshtoken, clientid, clientsecret } = functions.config().gma
 
 const cors = require('cors')({
         credentials: true, 
-        origin: '{portfolio-2023-6bd0c.web.app, gichelleamon.dev}'
+        origin: '*'
     }
 )
 
