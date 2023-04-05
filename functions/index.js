@@ -1,5 +1,8 @@
 const functions = require("firebase-functions");
 const nodemailer = require('nodemailer');
+const admin = require('firebase-admin');
+
+admin.initializeApp()
 
 let { useremail, refreshtoken, clientid, clientsecret } = functions.config().gmail;
 
@@ -23,7 +26,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-exports.sendEmail = functions.https.onRequest((req,res) => {
+exports.sendEmailOverHTTP = functions.https.onRequest((req,res) => {
       //for testing purposes
   console.log(
     'from sendEmail function. The request object is:',
