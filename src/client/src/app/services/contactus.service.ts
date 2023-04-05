@@ -9,6 +9,6 @@ export class ContactusService {
   constructor(private api: ApiService) { }
 
   sendEmail(emailData: any){
-    return this.api.post('sendMail', emailData)
+    return this.api.post('sendEmailOverHTTP', emailData)
   }
 }
